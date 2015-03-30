@@ -65,6 +65,12 @@
                     increaseArea: '20%' // optional
                 });
             });
+            $(document).ready(function () {
+                
+                $("#btnSignIn").click(function () {
+                    alert("This is a test");
+                });
+            });
         </script>
     </form>
 </body>

@@ -16,7 +16,7 @@ namespace TimeTableManagementSystem_Update
 
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
-            
+            //Response.Redirect("Table.aspx",true);
         }
     }
 }
