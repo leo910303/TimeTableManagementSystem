@@ -68,7 +68,7 @@
             $(document).ready(function () {
                 
                 $("#btnSignIn").click(function () {
-                    alert("This is a test");
+                    alert("This is a test message");
                 });
             });
         </script>
