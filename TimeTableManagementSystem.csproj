@@ -128,6 +128,7 @@
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="FacultyManagement.aspx" />
     <Content Include="Gruntfile.js" />
+    <Content Include="HR_Module\TestingPage.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="pages\404PageNotFound.aspx" />
     <Content Include="plugins\bootstrap-slider\bootstrap-slider.js" />
@@ -659,6 +660,13 @@
     </Compile>
     <Compile Include="FacultyManagement.aspx.designer.cs">
       <DependentUpon>FacultyManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HR_Module\TestingPage.aspx.cs">
+      <DependentUpon>TestingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HR_Module\TestingPage.aspx.designer.cs">
+      <DependentUpon>TestingPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
