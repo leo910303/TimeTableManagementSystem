@@ -16,7 +16,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
     <link href="../dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
-
+    <link href="../Student_Module/css/error.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -371,40 +371,9 @@
 
       <!-- Right side column. Contains the navbar and content of the page -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-            404 Error Page
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Examples</a></li>
-            <li class="active">404 error</li>
-          </ol>
-        </section>
-
-        <!-- Main content -->
-        <section class="content">
-
-          <div class="error-page">
-            <h2 class="headline text-yellow"> 404</h2>
-            <div class="error-content">
-              <h3><i class="fa fa-warning text-yellow"></i> Oops! Page not found.</h3>
-              <p>
-                We could not find the page you were looking for.
-                Meanwhile, you may <a href='../../index.html'>return to dashboard</a> or try using the search form.
-              </p>
-              <form class='search-form'>
-                <div class='input-group'>
-                  <input type="text" name="search" class='form-control' placeholder="Search"/>
-                  <div class="input-group-btn">
-                    <button type="submit" name="submit" class="btn btn-warning btn-flat"><i class="fa fa-search"></i></button>
-                  </div>
-                </div><!-- /.input-group -->
-              </form>
-            </div><!-- /.error-content -->
-          </div><!-- /.error-page -->
-        </section><!-- /.content -->
+        <h1>4</h1>
+        <h1>0</h1>
+        <h1>4</h1>
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
