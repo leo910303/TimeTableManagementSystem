@@ -1,10 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="404PageNotFound.aspx.cs" Inherits="TimeTableManagementSystem_Update.pages._404PageNotFound" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="TimeTableManagementSystem.Student_Module.Main" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    
 <head runat="server">
-    <title></title>
+    <title>Student Management</title>
     <!-- Bootstrap 3.3.2 -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
@@ -16,7 +19,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
     <link href="../dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
-    <link href="../Student_Module/css/error.css" rel="stylesheet" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -36,22 +39,27 @@
     <script src="../dist/js/demo.js" type="text/javascript"></script>
 </head>
 <body class="skin-blue">
+    
     <form id="form1" runat="server">
-    <div>
+       <div>
         <div class="wrapper">
       
       <header class="main-header">
-        <a href="../../index2.html" class="logo"><b>Admin</b>LTE</a>
+        <a href="#" class="logo"><b>User Panel</b></a>
+        
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
+            
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
+             <h2 class="navbar-nav" style="padding:5px 0px 0px 20px; color:white;"><b>TIMETABLE MANAGEMENT</b></h2>
           <div class="navbar-custom-menu">
+              
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
               <li class="dropdown messages-menu">
@@ -371,9 +379,8 @@
 
       <!-- Right side column. Contains the navbar and content of the page -->
       <div class="content-wrapper">
-        <h1>4</h1>
-        <h1>0</h1>
-        <h1>4</h1>
+        <!-- Main content goes here-->
+        
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">

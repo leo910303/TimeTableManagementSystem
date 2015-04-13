@@ -622,6 +622,9 @@
     <Content Include="plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Student_Module\css\error.css" />
+    <Content Include="Student_Module\css\Main.css" />
+    <Content Include="Student_Module\Main.aspx" />
     <Content Include="Table.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -692,6 +695,13 @@
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Student_Module\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student_Module\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Table.aspx.cs">
       <DependentUpon>Table.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -823,6 +833,7 @@
     <Folder Include="pages\mailbox\" />
     <Folder Include="pages\tables\" />
     <Folder Include="pages\UI\" />
+    <Folder Include="Physical_Module\" />
     <Folder Include="Student_Module\" />
   </ItemGroup>
   <ItemGroup>
