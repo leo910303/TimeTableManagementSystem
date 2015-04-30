@@ -1,4 +1,4 @@
-﻿#row1 .col-lg-4{
-    border:2px solid red;
-    height:100px;
+﻿#mainContent{
+    height:350px;
+    background-color:white;
 }

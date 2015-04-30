@@ -19,7 +19,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
     <link href="../dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
-
+    <link href="css/Main.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -380,12 +380,17 @@
       <!-- Right side column. Contains the navbar and content of the page -->
       <div class="content-wrapper">
         <!-- Main content goes here-->
-        
+        <div class="row">
+            <div id="mainContent" class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><a href="#"><strong>Student Notification</strong> </a></li>
+                    <li role="presentation"><a href="#">Student Feedback</a></li>
+                    <li role="presentation"><a href="#"></a></li>
+                </ul>
+            </div>
+        </div>
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 2.0
-        </div>
         <strong>Copyright &copy; 2014-2015 <a href="#">Sri Lanka Institute of Information Technology</a>.</strong> All rights reserved.
       </footer>
     </div><!-- ./wrapper -->
