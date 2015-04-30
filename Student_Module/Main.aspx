@@ -264,19 +264,6 @@
                       <small>Member since Jan. 2015</small>
                     </p>
                   </li>
-                  <!-- Menu Body -->
-                  <%--<li class="user-body">
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
-                    </div>
-                  </li>--%>
-                  <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
@@ -380,8 +367,9 @@
       <!-- Right side column. Contains the navbar and content of the page -->
       <div class="content-wrapper">
         <!-- Main content goes here-->
-        <div class="row">
-            <div id="mainContent" class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        
+        <div id="mainContent" class="container-fluid">
+            <div class="row">
                 <ul class="nav nav-tabs">
                     <li role="presentation" class="active"><a href="#"><strong>Student Notification</strong> </a></li>
                     <li role="presentation"><a href="#">Student Feedback</a></li>
@@ -389,7 +377,8 @@
                 </ul>
             </div>
         </div>
-      </div><!-- /.content-wrapper -->
+        </div>
+
       <footer class="main-footer">
         <strong>Copyright &copy; 2014-2015 <a href="#">Sri Lanka Institute of Information Technology</a>.</strong> All rights reserved.
       </footer>
