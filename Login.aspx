@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TimeTableManagementSystem_Update.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TimeTableManagementSystem_Update.Login" UnobtrusiveValidationMode="None"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -71,99 +71,87 @@
         </div>
         <div class="modal-body">
           <div class="container-fluid">
-            <form class="form-horizontal">
                 <div class="form-group">
                     <div class="row">
-                        <label for="regNo" class="col-sm-3 control-label">Registration Number</label>
+                        <!--regNo-->
+                        <asp:Label ID="Label1" runat="server" Text="Registration Number" CssClass="col-sm-3" Font-Bold="true"></asp:Label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="regNo" placeholder="Registration Number (ITXXXXXXXX)"/>
+                            <asp:TextBox ID="regNo" runat="server" CssClass="form-control" ValidationGroup="sRegistration" ToolTip="Registration Number"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="vRegNo" runat="server" ErrorMessage="* Registration Number required" ValidationGroup="sRegistration" ControlToValidate="regNo" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="vrRegNo" runat="server" ErrorMessage="* Registration Number format Incorrect. Follow(ITXXXXXXXX)" Display="Dynamic" ControlToValidate="regNo" ValidationGroup="sRegistration" ValidationExpression="^IT[0-9]{8}$" ForeColor="Red"></asp:RegularExpressionValidator>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                      <div class="row">
-                        <label for="pEmail" class="col-sm-3 control-label">Primary Email</label>
+                        <!--Primary Email-->
+                         <asp:Label ID="Label2" runat="server" Text="Primary Email" CssClass="col-sm-3" Font-Bold="true"></asp:Label>
+                        <div class="col-sm-9 ">
+                            <asp:TextBox ID="pEmail" runat="server" ToolTip="Primary Email" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="pEmailReq" runat="server" ErrorMessage="* Primary Email is required" ForeColor="Red" ControlToValidate="pEmail" ValidationGroup="sRegistration" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="pEmailReg" runat="server" ErrorMessage="* Email format is incorrect" ForeColor="Red" ControlToValidate="pEmail" ValidationGroup="sRegistration" ValidationExpression="^(IT|it)[0-9]{8}@my.sliit.lk$" Display="Dynamic"></asp:RegularExpressionValidator>
+                        </div>
+                         
+                    </div>
+                </div>
+                <div class="form-group">
+                     <div class="row">
+                        <!--Secondary Email (Optional)-->
+                         <asp:Label ID="Label3" runat="server" Text="Secondary Email (Optional)" CssClass="col-sm-3" Font-Bold="true"></asp:Label>
                         <div class="col-sm-9">
-                            <input type="email" class="form-control" id="pEmail" placeholder="Primary Email"/>
+                            <asp:TextBox ID="sEmail" runat="server" ToolTip="Secondary Email (optional)" CssClass="form-control"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="sEmailReg" runat="server" ErrorMessage="* Email format is incorrect" ForeColor="Red" ControlToValidate="sEmail" ValidationGroup="sRegistration" ValidationExpression="^(([^<>()[\]\\.,;:\s@\'']+(\.[^<>()[\]\\.,;:\s@\'']+)*)|(\''.+\''))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$" Display="Dynamic"></asp:RegularExpressionValidator>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                      <div class="row">
-                        <label for="sEmail" class="col-sm-3 control-label">Secondary Email (Optional)</label>
-                        <div class="col-sm-9">
-                            <input type="email" class="form-control" id="sEmail" placeholder="Secondary Email"/>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                     <div class="row">
-                        <label for="faculty" class="col-sm-3 control-label">Faculty</label>
+                        <!--Faculty-->
+                         <asp:Label ID="Label4" runat="server" Text="Faculty" CssClass="col-sm-3" Font-Bold="true"></asp:Label>
                          <div class="col-sm-9">
-                            <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="faculty" data-toggle="dropdown" aria-expanded="true">
-                                    Select Your Faculty
-                                <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="faculty">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Computing</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Engineering</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Business</a></li>
-                                </ul>
-                            </div>
+                           <asp:DropDownList ID="faculty" runat="server" CssClass="dropdown"></asp:DropDownList>
                          </div>
                         </div>
                     </div>
                     <div class="form-group">
                      <div class="row">
-                        <label for="group1" class="col-sm-3 control-label">Group</label>
+                        <!--Group-->
+                         <asp:Label ID="Label5" runat="server" Text="Group" Font-Bold="true" CssClass="col-sm-3"></asp:Label>
                         <div class="col-sm-9">
-                            <div class="radio inline">
-                                <label class="control-label">WD</label>
-                                 <input type="radio" name="optionsRadios" id="group1" value="option1" checked>
-                            </div>
-                            <div class="radio inline">
-                                <label class="control-label">WE</label>
-                                 <input type="radio" name="optionsRadios" id="group2" value="option2">
-                            </div>
+                            <asp:RadioButton ID="wd" runat="server" GroupName="group" CssClass="radio-inline" Text="Week Day" Checked="true"/>
+                            <asp:RadioButton ID="we" runat="server" GroupName="group" CssClass="radio-inline" Text="Week End"/>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                      <div class="row">
-                        <label for="year" class="col-sm-3 control-label">Current Year</label>
+                        <!--Current Year-->
+                         <asp:Label ID="Label6" runat="server" Text="Select your Current Year" Font-Bold="true" CssClass="col-sm-3"></asp:Label>
                          <div class="col-sm-9">
-                            <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="year" data-toggle="dropdown" aria-expanded="true">
-                                    Select Your Faculty
-                                <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="year">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Year 1</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Year 2</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Year 3</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Year 4</a></li>
-                                </ul>
-                            </div>
+                             <asp:DropDownList ID="year" runat="server" CssClass="dropdown"></asp:DropDownList>
                          </div>
                         </div>
                     </div>
                      <div class="form-group">
                      <div class="row">
-                        <label for="mobile" class="col-sm-3 control-label">Mobile Number</label>
+                        <!--Mobile Number-->
+                         <asp:Label ID="Label7" runat="server" Text="Mobile Number" Font-Bold="true" CssClass="col-sm-3"></asp:Label>
                         <div class="col-sm-9">
-                            <input type="text" pattern="[0-9] {10}" class="form-control" id="mobile" placeholder="Mobile Number"/>
+                            <asp:TextBox ID="mobile" runat="server" CssClass="form-control" ToolTip="Mobile Number"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="mobileReq" runat="server" ErrorMessage="* Mobile Number required" ForeColor="Red" ControlToValidate="mobile" ValidationGroup="sRegistration" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="mobileReg" runat="server" ErrorMessage="* Incorrect Format" ForeColor="Red" ControlToValidate="mobile" ValidationGroup="sRegistration" ValidationExpression="^07(1|2|5|6|7|8)[0-9]{7}$" Display="Dynamic"></asp:RegularExpressionValidator>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                      <div class="row">
                         <div class="col-sm-9 col-sm-offset-3">
-                            <button type="button" class="btn btn-primary">Register</button>
+                            <!--Submit-->
+                            <asp:Button ID="Submit_Registration" runat="server" Text="Register" CssClass="btn btn-success" ValidationGroup="sRegistration" />
                         </div>
                     </div>
                 </div>
-                </form><!--/.form-->
+            
                 </div>
            </div>
         <div class="modal-footer">
@@ -191,6 +179,14 @@
                 
                 $("#btnSignIn").click(function () {
                     alert("This is a test message");
+                });
+                
+                $('#pEmail').focus(function () {
+                    console.log($('#regNo').val());
+                    if ($('#regNo').val() != "") {
+                        var email = $('#regNo').val().concat("@my.sliit.lk");
+                        $('#pEmail').val(email);
+                    }
                 });
             });
         </script>
