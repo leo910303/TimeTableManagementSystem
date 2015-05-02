@@ -12,6 +12,7 @@
     <link href="dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
     <link href="plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
+    
 </head>
 <body class="login-page">
     <form id="form1" runat="server">
@@ -147,7 +148,7 @@
                      <div class="row">
                         <div class="col-sm-9 col-sm-offset-3">
                             <!--Submit-->
-                            <asp:Button ID="Submit_Registration" runat="server" Text="Register" CssClass="btn btn-success" ValidationGroup="sRegistration" />
+                            <asp:Button ID="Submit_Registration" runat="server" Text="Register" CssClass="btn btn-success" ValidationGroup="sRegistration" OnClick="Submit_Registration_Click" />
                         </div>
                     </div>
                 </div>
@@ -160,7 +161,9 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-        
+  
+  
+
     <!-- jQuery 2.1.3 -->
     <script src="../../plugins/jQuery/jQuery-2.1.3.min.js"></script>
     <!-- Bootstrap 3.3.2 JS -->
