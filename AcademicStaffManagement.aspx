@@ -256,7 +256,7 @@
                     </p>
                   </li>
                   <!-- Menu Body -->
-                  <%--<li class="user-body">
+                  <li class="user-body">
                     <div class="col-xs-4 text-center">
                       <a href="#">Followers</a>
                     </div>
@@ -266,7 +266,7 @@
                     <div class="col-xs-4 text-center">
                       <a href="#">Friends</a>
                     </div>
-                  </li>--%>
+                  </li>
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
@@ -370,7 +370,7 @@
       <!-- Right side column. Contains the navbar and content of the page -->
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
+       <%-- <section class="content-header">
           <h1>
             Dashboard
             <small>Control panel</small>
@@ -379,12 +379,12 @@
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Dashboard</li>
           </ol>
-        </section>
+        </section>--%>
 
         <!-- Main content -->
         <section class="content">
           <!-- Small boxes (Stat box) -->
-          <div class="row">
+         <%-- <div class="row">
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-aqua">
@@ -437,7 +437,7 @@
                 <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
-          </div><!-- /.row -->
+          </div><!-- /.row -->--%>
 
         
         <div id="DIV1" style="position:absolute; left: 50%;">

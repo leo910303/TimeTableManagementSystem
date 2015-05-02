@@ -833,8 +833,6 @@
     <Folder Include="pages\mailbox\" />
     <Folder Include="pages\tables\" />
     <Folder Include="pages\UI\" />
-    <Folder Include="Physical_Module\" />
-    <Folder Include="Student_Module\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
