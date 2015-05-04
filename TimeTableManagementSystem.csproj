@@ -38,8 +38,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    
     <Reference Include="Data">
       <HintPath>Data\bin\Debug\Data.dll</HintPath>
     </Reference>
@@ -141,12 +140,12 @@
     <Content Include="img\sliit_logo.png" />
     <Content Include="Login.aspx" />
     <Content Include="pages\404PageNotFound.aspx" />
-<<<<<<< HEAD
+    
     <Content Include="PasswordReset.aspx" />
-=======
+
     <Content Include="Physical_Module\css\Main.css" />
     <Content Include="Physical_Module\Main.aspx" />
->>>>>>> origin/master
+
     <Content Include="plugins\bootstrap-slider\bootstrap-slider.js" />
     <Content Include="plugins\bootstrap-slider\slider.css" />
     <Content Include="plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
@@ -636,9 +635,9 @@
     <Content Include="plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.js" />
-<<<<<<< HEAD
+
     <Content Include="ServerConfiguration.aspx" />
-=======
+
     <Content Include="Reports_UI\js\report.js" />
     <Content Include="Reports_UI\ReportEmployeeDetails.aspx" />
     <Content Include="ReportViwer.aspx" />
@@ -650,7 +649,7 @@
     <Content Include="Student_Module\img\sliit_LOGO_new.png" />
     <Content Include="Student_Module\js\sweetalert.min.js" />
     <Content Include="Student_Module\Main.aspx" />
->>>>>>> origin/master
+
     <Content Include="Table.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -713,7 +712,7 @@
     <Compile Include="pages\404PageNotFound.aspx.designer.cs">
       <DependentUpon>404PageNotFound.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
+
     <Compile Include="PasswordReset.aspx.cs">
       <DependentUpon>PasswordReset.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -722,13 +721,14 @@
       <DependentUpon>PasswordReset.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+	
     <Compile Include="ServerConfiguration.aspx.cs">
       <DependentUpon>ServerConfiguration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ServerConfiguration.aspx.designer.cs">
       <DependentUpon>ServerConfiguration.aspx</DependentUpon>
-=======
+    </Compile>
     <Compile Include="Physical_Module\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -736,7 +736,7 @@
     <Compile Include="Physical_Module\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    
     <Compile Include="Reports_UI\ReportEmployeeDetails.aspx.cs">
       <DependentUpon>ReportEmployeeDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -757,8 +757,8 @@
     </Compile>
     <Compile Include="Student_Module\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
->>>>>>> origin/master
     </Compile>
+    
     <Compile Include="Table.aspx.cs">
       <DependentUpon>Table.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
