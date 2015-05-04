@@ -38,6 +38,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Data">
+      <HintPath>Data\bin\Debug\Data.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -49,6 +54,10 @@
       <HintPath>..\..\LoginControl\LoginControl\bin\Debug\LoginControl\LoginControl\bin\Debug\LoginControl.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Reports">
+      <HintPath>Reports\bin\Debug\Reports.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -128,9 +137,16 @@
     <Content Include="dist\js\pages\dashboard2.js" />
     <Content Include="FacultyManagement.aspx" />
     <Content Include="Gruntfile.js" />
+    <Content Include="HR_Module\TestingPage.aspx" />
+    <Content Include="img\sliit_logo.png" />
     <Content Include="Login.aspx" />
     <Content Include="pages\404PageNotFound.aspx" />
+<<<<<<< HEAD
     <Content Include="PasswordReset.aspx" />
+=======
+    <Content Include="Physical_Module\css\Main.css" />
+    <Content Include="Physical_Module\Main.aspx" />
+>>>>>>> origin/master
     <Content Include="plugins\bootstrap-slider\bootstrap-slider.js" />
     <Content Include="plugins\bootstrap-slider\slider.css" />
     <Content Include="plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
@@ -620,7 +636,21 @@
     <Content Include="plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.js" />
+<<<<<<< HEAD
     <Content Include="ServerConfiguration.aspx" />
+=======
+    <Content Include="Reports_UI\js\report.js" />
+    <Content Include="Reports_UI\ReportEmployeeDetails.aspx" />
+    <Content Include="ReportViwer.aspx" />
+    <Content Include="Student_Module\css\error.css" />
+    <Content Include="Student_Module\css\Main.css" />
+    <Content Include="Student_Module\css\sweetalert.css" />
+    <Content Include="Student_Module\img\logo.png" />
+    <Content Include="Student_Module\img\logo1.png" />
+    <Content Include="Student_Module\img\sliit_LOGO_new.png" />
+    <Content Include="Student_Module\js\sweetalert.min.js" />
+    <Content Include="Student_Module\Main.aspx" />
+>>>>>>> origin/master
     <Content Include="Table.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -662,6 +692,13 @@
     <Compile Include="FacultyManagement.aspx.designer.cs">
       <DependentUpon>FacultyManagement.aspx</DependentUpon>
     </Compile>
+    <Compile Include="HR_Module\TestingPage.aspx.cs">
+      <DependentUpon>TestingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HR_Module\TestingPage.aspx.designer.cs">
+      <DependentUpon>TestingPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -676,6 +713,7 @@
     <Compile Include="pages\404PageNotFound.aspx.designer.cs">
       <DependentUpon>404PageNotFound.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="PasswordReset.aspx.cs">
       <DependentUpon>PasswordReset.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -690,6 +728,36 @@
     </Compile>
     <Compile Include="ServerConfiguration.aspx.designer.cs">
       <DependentUpon>ServerConfiguration.aspx</DependentUpon>
+=======
+    <Compile Include="Physical_Module\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Physical_Module\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports_UI\ReportEmployeeDetails.aspx.cs">
+      <DependentUpon>ReportEmployeeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports_UI\ReportEmployeeDetails.aspx.designer.cs">
+      <DependentUpon>ReportEmployeeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportViwer.aspx.cs">
+      <DependentUpon>ReportViwer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViwer.aspx.designer.cs">
+      <DependentUpon>ReportViwer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Module\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student_Module\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+>>>>>>> origin/master
     </Compile>
     <Compile Include="Table.aspx.cs">
       <DependentUpon>Table.aspx</DependentUpon>

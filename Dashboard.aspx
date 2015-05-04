@@ -326,6 +326,7 @@
               <ul class="treeview-menu">
                 <li><a href="FacultyManagement.aspx"><i class="fa fa-circle-o"></i> Faculty Management</a></li>
                 <li><a href="FacultyManagement.aspx"><i class="fa fa-circle-o"></i> Branch Management</a></li>
+                <li><a href="Student_Module/Main.aspx"><i class="fa fa-circle-o"></i> Student Management</a></li>
               </ul>
             </li>
 
