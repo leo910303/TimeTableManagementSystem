@@ -46,7 +46,7 @@
             </div><!-- /.col -->
           </div>
 
-        <a href="#">I forgot my password</a>
+        <a href="PasswordReset.aspx">I forgot my password</a>
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
