@@ -638,6 +638,9 @@
     <Content Include="Student_Module\css\error.css" />
     <Content Include="Student_Module\css\Main.css" />
     <Content Include="Student_Module\css\sweetalert.css" />
+    <Content Include="Student_Module\img\logo.png" />
+    <Content Include="Student_Module\img\logo1.png" />
+    <Content Include="Student_Module\img\sliit_LOGO_new.png" />
     <Content Include="Student_Module\js\sweetalert.min.js" />
     <Content Include="Student_Module\Main.aspx" />
     <Content Include="Table.aspx" />
