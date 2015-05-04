@@ -13,8 +13,7 @@ namespace Data
     
     public partial class rptGetLecturerDetailsByLecturerSerial_Result
     {
-        public string FName { get; set; }
-        public string LName { get; set; }
+        public string FullName { get; set; }
         public string Address { get; set; }
         public string Designation { get; set; }
         public string Title { get; set; }

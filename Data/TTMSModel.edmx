@@ -344,8 +344,7 @@
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="rptGetLecturerDetailsByLecturerSerial_Result">
-          <Property Type="String" Name="FName" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="LName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FullName" Nullable="true" MaxLength="101" />
           <Property Type="String" Name="Address" Nullable="true" />
           <Property Type="String" Name="Designation" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="Title" Nullable="true" MaxLength="50" />
@@ -526,8 +525,7 @@
           <FunctionImportMapping FunctionImportName="rptGetLecturerDetailsByLecturerSerial" FunctionName="TTMS_DBModel.Store.rptGetLecturerDetailsByLecturerSerial">
             <ResultMapping>
               <ComplexTypeMapping TypeName="TTMS_DBModel.rptGetLecturerDetailsByLecturerSerial_Result">
-                <ScalarProperty Name="FName" ColumnName="FName" />
-                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Designation" ColumnName="Designation" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
