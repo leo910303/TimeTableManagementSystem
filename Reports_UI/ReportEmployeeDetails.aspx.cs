@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Reports;
+using Data;
 
 
 
@@ -21,18 +23,18 @@ namespace TimeTableManagementSystem.Reports_UI
         {
             int LecturerSerial = Convert.ToInt32(drpStaffId.SelectedValue);
 
-            //rptLecturerDetailsBySerial rpt = new rptLecturerDetailsBySerial();
-            //ReportLectureDetailsData reportEmployeeData = new ReportLectureDetailsData();
-            //DataSet ds = reportEmployeeData.GetReportData(LecturerSerial);
+            rptLecturerDetailsBySerial rpt = new rptLecturerDetailsBySerial();
+            ReportLectureDetailsData reportEmployeeData = new ReportLectureDetailsData();
+            DataSet ds = reportEmployeeData.GetReportData(LecturerSerial);
 
-            //if (ds.Tables[0].Rows.Count < 1)
-            //    ClientScript.RegisterStartupScript(this.GetType(), "Alert", "alert('No records to display');", true);
-            //else
-            //{
-            //    rpt.SetDataSource(ds);
-            //    Session["Rpt"] = rpt;
-            //    ClientScript.RegisterStartupScript(this.GetType(), "open", "openPrintPage();", true);
-            //}
+            if (ds.Tables[0].Rows.Count < 1)
+                ClientScript.RegisterStartupScript(this.GetType(), "Alert", "alert('No records to display');", true);
+            else
+            {
+                rpt.SetDataSource(ds);
+                Session["Rpt"] = rpt;
+                ClientScript.RegisterStartupScript(this.GetType(), "open", "openPrintPage();", true);
+            }
         }
     }
 }

@@ -185,7 +185,9 @@
             });
             $(document).ready(function () {
                 
-              
+                $("#btnSignIn").click(function () {
+                    alert("This is a test message");
+                });
                 
                 $('#pEmail').focus(function () {
                     console.log($('#regNo').val());
