@@ -14,22 +14,15 @@
     <link href="plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
     
 </head>
-<body class="login-page" style="background-color:white;">
+<body class="login-page">
     <form id="form1" runat="server">
     <div class="container-fluid">
-        <div class="row">
-        <nav class="navbar" style="background-color:#4E97C6;">
-            <img alt="Error loading Image" src="Student_Module/img/logo.png" class="navbar-brand navbar-left;"/>
-            <h1 class="navbar-text navbar-left" style="color:#ffffff;">SLIIT TIMETABLE MANAGEMENT</h1>
-            <button type="button" class="btn btn-warning navbar-btn navbar-right" data-toggle="modal" data-target="#studentModal" style="margin-right: 8px; margin-top: 17px;">
-            Student Registration <span class="glyphicon glyphicon-user"></span>
-        </button>
-        </nav>
-        </div>
         <div class="row"><div class="col-md-7 col-md-offset-2">
      <div class="login-box">
-      
-      <div class="login-box-body" style="background-color: rgb(238, 246, 245); border: 2px solid rgb(167, 179, 233);">
+      <div class="login-logo">
+        <b>SLIIT</b> Timetable Management System
+      </div><!-- /.login-logo -->
+      <div class="login-box-body">
         <p class="login-box-msg" id="test" runat="server">Sign in to start your session</p>
           <div class="form-group has-feedback">
          <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" placeholder="Email"></asp:TextBox>
@@ -56,13 +49,15 @@
             </div><!-- /.col -->
           </div>
 
-        <a href="PasswordReset.aspx">I forgot my password</a>
+        <a href="#">I forgot my password</a>
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
     </div><!-- /.Column -->
     <div class="col-md-3">
-        
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#studentModal" style="float:right; margin-top:10px; margin-bottom:10px;">
+            Student Registration
+        </button>
     </div>
     </div><!-- /.Row -->
     </div><!-- /.Container -->
@@ -185,7 +180,9 @@
             });
             $(document).ready(function () {
                 
-              
+                $("#btnSignIn").click(function () {
+                    alert("This is a test message");
+                });
                 
                 $('#pEmail').focus(function () {
                     console.log($('#regNo').val());
