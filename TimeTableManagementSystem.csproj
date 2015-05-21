@@ -38,11 +38,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="Data">
-      <HintPath>Data\bin\Debug\Data.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -54,10 +49,6 @@
       <HintPath>..\..\LoginControl\LoginControl\bin\Debug\LoginControl\LoginControl\bin\Debug\LoginControl.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="Reports">
-      <HintPath>Reports\bin\Debug\Reports.dll</HintPath>
-    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -140,7 +131,6 @@
     <Content Include="HR_Module\TestingPage.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="pages\404PageNotFound.aspx" />
-    <Content Include="PasswordReset.aspx" />
     <Content Include="Physical_Module\css\Main.css" />
     <Content Include="Physical_Module\Main.aspx" />
     <Content Include="plugins\bootstrap-slider\bootstrap-slider.js" />
@@ -632,15 +622,35 @@
     <Content Include="plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.js" />
-    <Content Include="ServerConfiguration.aspx" />
+    <Content Include="Student_Module\css\demos.css" />
     <Content Include="Student_Module\css\error.css" />
+    <Content Include="Student_Module\css\icons-2x.png" />
+    <Content Include="Student_Module\css\icons.png" />
+    <Content Include="Student_Module\css\jquery-ui.css" />
+    <Content Include="Student_Module\css\jsgrid.css" />
     <Content Include="Student_Module\css\Main.css" />
+    <Content Include="Student_Module\css\pageLoad.css" />
     <Content Include="Student_Module\css\sweetalert.css" />
+    <Content Include="Student_Module\css\theme.css" />
     <Content Include="Student_Module\img\logo.png" />
     <Content Include="Student_Module\img\logo1.png" />
     <Content Include="Student_Module\img\sliit_LOGO_new.png" />
+    <Content Include="Student_Module\js\db.js" />
+    <Content Include="Student_Module\js\jquery-ui.min.js" />
+    <Content Include="Student_Module\js\jquery.js" />
+    <Content Include="Student_Module\js\jsgrid.core.js" />
+    <Content Include="Student_Module\js\jsgrid.field.checkbox.js" />
+    <Content Include="Student_Module\js\jsgrid.field.control.js" />
+    <Content Include="Student_Module\js\jsgrid.field.js" />
+    <Content Include="Student_Module\js\jsgrid.field.number.js" />
+    <Content Include="Student_Module\js\jsgrid.field.select.js" />
+    <Content Include="Student_Module\js\jsgrid.field.text.js" />
+    <Content Include="Student_Module\js\jsgrid.load-indicator.js" />
+    <Content Include="Student_Module\js\jsgrid.load-strategies.js" />
+    <Content Include="Student_Module\js\jsgrid.sort-strategies.js" />
     <Content Include="Student_Module\js\sweetalert.min.js" />
     <Content Include="Student_Module\Main.aspx" />
+    <Content Include="Student_Module\WebService1.asmx" />
     <Content Include="Table.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -703,21 +713,6 @@
     <Compile Include="pages\404PageNotFound.aspx.designer.cs">
       <DependentUpon>404PageNotFound.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PasswordReset.aspx.cs">
-      <DependentUpon>PasswordReset.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PasswordReset.aspx.designer.cs">
-      <DependentUpon>PasswordReset.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServerConfiguration.aspx.cs">
-      <DependentUpon>ServerConfiguration.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ServerConfiguration.aspx.designer.cs">
-      <DependentUpon>ServerConfiguration.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Physical_Module\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -725,12 +720,17 @@
     <Compile Include="Physical_Module\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student_Module\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Student_Module\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Module\WebService1.asmx.cs">
+      <DependentUpon>WebService1.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Table.aspx.cs">
       <DependentUpon>Table.aspx</DependentUpon>
