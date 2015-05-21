@@ -20,6 +20,7 @@
     <link href="plugins/iCheck/flat/blue.css" rel="stylesheet" type="text/css" />
     <!-- Morris chart -->
     <link href="plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+<%--    <a href="AcademicStaffManagement.aspx">AcademicStaffManagement.aspx</a>--%>
     <!-- jvectormap -->
     <link href="plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
     <!-- Date Picker -->
@@ -676,8 +677,6 @@
 
                         </div>
 
-
-
                     </section>
                 </div>
             </div>
@@ -721,8 +720,6 @@
 
             <!-- AdminLTE for demo purposes -->
             <script src="dist/js/demo.js" type="text/javascript"></script>
-
-
 
             <script src="plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
             <script src="plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>

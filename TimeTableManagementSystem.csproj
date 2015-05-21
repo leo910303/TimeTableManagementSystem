@@ -138,7 +138,6 @@
     <Content Include="FacultyManagement.aspx" />
     <Content Include="Gruntfile.js" />
     <Content Include="HR_Module\TestingPage.aspx" />
-    <Content Include="img\sliit_logo.png" />
     <Content Include="Login.aspx" />
     <Content Include="pages\404PageNotFound.aspx" />
     <Content Include="PasswordReset.aspx" />
@@ -634,9 +633,6 @@
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="ServerConfiguration.aspx" />
-    <Content Include="Reports_UI\js\report.js" />
-    <Content Include="Reports_UI\ReportEmployeeDetails.aspx" />
-    <Content Include="Reports_UI\ReportViwer.aspx" />
     <Content Include="Student_Module\css\error.css" />
     <Content Include="Student_Module\css\Main.css" />
     <Content Include="Student_Module\css\sweetalert.css" />
@@ -728,20 +724,6 @@
     </Compile>
     <Compile Include="Physical_Module\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports_UI\ReportEmployeeDetails.aspx.cs">
-      <DependentUpon>ReportEmployeeDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reports_UI\ReportEmployeeDetails.aspx.designer.cs">
-      <DependentUpon>ReportEmployeeDetails.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports_UI\ReportViwer.aspx.cs">
-      <DependentUpon>ReportViwer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reports_UI\ReportViwer.aspx.designer.cs">
-      <DependentUpon>ReportViwer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Student_Module\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
