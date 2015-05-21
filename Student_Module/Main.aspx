@@ -20,14 +20,6 @@
          folder instead of downloading all of them to reduce the load. -->
     <link href="../dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
     <link href="css/Main.css" rel="stylesheet" />
-    <link href="css/pageLoad.css" rel="stylesheet" />
-    <!--Js Grid-->
-    <link href="css/demos.css" rel="stylesheet"/>
-    <link href="css/jsgrid.css" rel="stylesheet" type="text/css"/>
-    <link href="css/theme.css" rel="stylesheet" type="text/css"/>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,400" rel="stylesheet" type="text/css"/>
-
-     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -45,21 +37,6 @@
     <script src="../dist/js/app.min.js" type="text/javascript"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js" type="text/javascript"></script>
-
-    <script src="js/db.js" type="text/javascript"></script>
-    <!--Js Grid-->
-    <script src="js/jsgrid.core.js" type="text/javascript"></script>
-    <script src="js/jsgrid.load-indicator.js" type="text/javascript"></script>
-    <script src="js/jsgrid.load-strategies.js" type="text/javascript"></script>
-    <script src="js/jsgrid.sort-strategies.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.text.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.number.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.select.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.checkbox.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.control.js" type="text/javascript"></script>
-
-  
 </head>
 <body class="skin-blue">
     
@@ -394,64 +371,19 @@
         <div id="mainContent" class="container-fluid">
             <div class="row">
                 <ul class="nav nav-tabs">
-                    <li role="presentation" class="active"><a href="#"><strong>Student Management</strong> </a></li>
+                    <li role="presentation" class="active"><a href="#"><strong>Student Notification</strong> </a></li>
                     <li role="presentation"><a href="#">Student Feedback</a></li>
                     <li role="presentation"><a href="#"></a></li>
                 </ul>
             </div>
-            
-                <div id="jsGrid" style="margin-top:30px"></div>
         </div>
-           
         </div>
-        <!--PageLoad-->
-        <div id="new" class="body">
-            <div class="loader-wrapper">
-            <div class="loader"></div>
-            <div class="loader-section section-left"></div>
-            <div class="loader-section section-right"></div>
-            </div>
-        </div>
-            
+
       <footer class="main-footer">
         <strong>Copyright &copy; 2014-2015 <a href="#">Sri Lanka Institute of Information Technology</a>.</strong> All rights reserved.
       </footer>
     </div><!-- ./wrapper -->
     </div>
     </form>
-    <script>
-        $(function() {
-
-            $("#jsGrid").jsGrid({
-                height: "70%",
-                width: "100%",
-                filtering: true,
-                editing: true,
-                sorting: true,
-                paging: true,
-                autoload: true,
-                pageSize: 15,
-                pageButtonCount: 7,
-                deleteConfirm: "Do you really want to delete the client?",
-                controller: db,
-                fields: [
-                    { name: "Reg_No", type: "text", width: 80 },
-                    { name: "Primary_Email", type: "text", width: 110 },
-                    { name: "Secondary_Email", type: "text", width: 100 },
-                    { name: "Faculty", type: "select", items: db.faculties, valueField: "Id", textField: "Name",width: 70 },
-                    { name: "Group", type: "select", items: db.groups, valueField: "Id", textField: "Name", width: 60 },
-                    { name: "Year", type: "select", items: db.years, valueField: "Id", textField: "Name", width: 50 },
-                    { name: "Mobile", type: "text", width: 80 },
-                    { type: "control" }
-                ]
-            });
-
-        });
-
-        $("#btn").click(function () {
-            $("#new").show();
-        });
-    </script>
-    
 </body>
 </html>

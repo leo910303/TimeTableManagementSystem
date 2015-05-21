@@ -622,35 +622,14 @@
     <Content Include="plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="plugins\timepicker\bootstrap-timepicker.min.js" />
-    <Content Include="Student_Module\css\demos.css" />
     <Content Include="Student_Module\css\error.css" />
-    <Content Include="Student_Module\css\icons-2x.png" />
-    <Content Include="Student_Module\css\icons.png" />
-    <Content Include="Student_Module\css\jquery-ui.css" />
-    <Content Include="Student_Module\css\jsgrid.css" />
     <Content Include="Student_Module\css\Main.css" />
-    <Content Include="Student_Module\css\pageLoad.css" />
     <Content Include="Student_Module\css\sweetalert.css" />
-    <Content Include="Student_Module\css\theme.css" />
     <Content Include="Student_Module\img\logo.png" />
     <Content Include="Student_Module\img\logo1.png" />
     <Content Include="Student_Module\img\sliit_LOGO_new.png" />
-    <Content Include="Student_Module\js\db.js" />
-    <Content Include="Student_Module\js\jquery-ui.min.js" />
-    <Content Include="Student_Module\js\jquery.js" />
-    <Content Include="Student_Module\js\jsgrid.core.js" />
-    <Content Include="Student_Module\js\jsgrid.field.checkbox.js" />
-    <Content Include="Student_Module\js\jsgrid.field.control.js" />
-    <Content Include="Student_Module\js\jsgrid.field.js" />
-    <Content Include="Student_Module\js\jsgrid.field.number.js" />
-    <Content Include="Student_Module\js\jsgrid.field.select.js" />
-    <Content Include="Student_Module\js\jsgrid.field.text.js" />
-    <Content Include="Student_Module\js\jsgrid.load-indicator.js" />
-    <Content Include="Student_Module\js\jsgrid.load-strategies.js" />
-    <Content Include="Student_Module\js\jsgrid.sort-strategies.js" />
     <Content Include="Student_Module\js\sweetalert.min.js" />
     <Content Include="Student_Module\Main.aspx" />
-    <Content Include="Student_Module\WebService1.asmx" />
     <Content Include="Table.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -727,10 +706,6 @@
     </Compile>
     <Compile Include="Student_Module\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Student_Module\WebService1.asmx.cs">
-      <DependentUpon>WebService1.asmx</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Table.aspx.cs">
       <DependentUpon>Table.aspx</DependentUpon>
