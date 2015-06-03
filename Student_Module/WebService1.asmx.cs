@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Web;
 using System.Web.Script.Serialization;
@@ -18,23 +20,53 @@ namespace TimeTableManagementSystem.Student_Module
     [System.Web.Script.Services.ScriptService]
     public class WebService1 : System.Web.Services.WebService
     {
+        public static List<Student> studentList = new List<Student>();
+        public static List<Student> studentProfilesList = new List<Student>();
 
         [WebMethod]
-        public List<Object> HelloWorld()
+        public List<Student> getPendingList()
         {
-            //var javaScriptSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-            //String jsonString = javaScriptSerializer.Serialize(new test("Sachith","Bentota"));
-            //return jsonString;
-            List<Object> t1 = new List<Object>();
-            t1.Add(new test("IT12094714","IT12094714@my.sliit.lk","wadsachi@gmail.com",1,1,4,"0758074724"));
-            t1.Add(new test("IT12094712", "IT12094712@my.sliit.lk", "yosh@gmail.com", 2, 2,3,"0779845132"));
+            return studentList;
+        }
 
-           // return new test("Sachith", 24,6,"Bentota",false);
+        [WebMethod]
+        public String verifyStudent(String regNo)
+        {
+            String result = "failed";
+            foreach (Student student in studentList)
+            {
+                if (String.Equals(student.getRegNO(), regNo))
+                {
+                    result = "success";
+                    break;
+                }
 
-            return t1;
+            }
+            return result;
+        }
+
+        [WebMethod]
+        public List<Student> getStudentProfiles()
+        {
+            return studentProfilesList;
+        }
+
+        [WebMethod]
+        public String addStudentProfile(String regNo,String primaryEmail,String secondaryEmail,int faculty,int group,int year,String mobile)
+        {
+            Student student = new Student(regNo, primaryEmail, secondaryEmail, faculty, group, year, mobile);
+            studentList.RemoveAll(x => x.Reg_No == regNo);
+            studentProfilesList.Add(student);
+            return "success";
+        }
+
+        [WebMethod]
+        public static void addRequest(String regNo, String primaryEmail, String secondaryEmail, int faculty, int group, int year, String mobile)
+        {
+            studentList.Add(new Student(regNo, primaryEmail, secondaryEmail, faculty, group, year, mobile));
         }
     }
-    public class test
+    public class Student
     {
         private String reg_No;
         private String primary_Email;
@@ -44,7 +76,7 @@ namespace TimeTableManagementSystem.Student_Module
         private int year;
         private String mobile;
 
-        public test(String reg_No, String primary_Email, String secondary_Email, int faculty, int group,int year,String mobile)
+        public Student(String reg_No, String primary_Email, String secondary_Email, int faculty, int group, int year, String mobile)
         {
             this.reg_No = reg_No;
             this.primary_Email = primary_Email;
@@ -88,6 +120,10 @@ namespace TimeTableManagementSystem.Student_Module
         {
             set { this.mobile = value; }
             get { return this.mobile; }
+        }
+        public String getRegNO()
+        {
+            return this.reg_No;
         }
     }
 }

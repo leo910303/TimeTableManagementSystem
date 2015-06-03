@@ -1,11 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="TimeTableManagementSystem.Student_Module.Main" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudentManagement.aspx.cs" Inherits="TimeTableManagementSystem.Student_Module.StudentManagement" %>
 
 <!DOCTYPE html>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-    
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Student Management</title>
     <!-- Bootstrap 3.3.2 -->
@@ -46,7 +45,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js" type="text/javascript"></script>
     <script src="js/sweetalert.min.js" type="text/javascript"></script>
-    <script src="js/db.js" type="text/javascript"></script>
+    <script src="js/db2.js" type="text/javascript"></script>
     <!--Js Grid-->
     <script src="js/jsgrid.core.js" type="text/javascript"></script>
     <script src="js/jsgrid.load-indicator.js" type="text/javascript"></script>
@@ -58,14 +57,11 @@
     <script src="js/jsgrid.field.select.js" type="text/javascript"></script>
     <script src="js/jsgrid.field.checkbox.js" type="text/javascript"></script>
     <script src="js/jsgrid.field.control.js" type="text/javascript"></script>
-
-  
 </head>
 <body class="skin-blue">
-    
     <form id="form1" runat="server">
-       <div>
-        <div class="wrapper">
+    <div>
+           <div class="wrapper">
       
       <header class="main-header">
         <a href="#" class="logo"><b>User Panel</b></a>
@@ -356,7 +352,6 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="../AcademicStaffManagement.aspx"><i class="fa fa-circle-o"></i> Manage Academic Staff</a></li>
-                <li><a href="StudentManagement.aspx"><i class="fa fa-circle-o"></i> Student Profiles</a></li>
               </ul>
             </li>
 
@@ -393,41 +388,18 @@
         <!-- Main content goes here-->
        <div class="container" style="padding-left: 0px;">
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#studentRegistration">Student Registration Requests</a></li>
-                 <li><a data-toggle="tab" href="#studentProfiles">Current Student Profiles</a></li>
+                <li class="active"><a data-toggle="tab" href="#studentProfiles">Current Student Profiles</a></li>
             </ul>
 
             <div class="tab-content">
-                <div id="studentRegistration" class="tab-pane fade in active">
+                <div id="studentProfiles" class="tab-pane fade in active">
                     <div class="container-fluid" style="height:460px">
                         <div id="jsGrid" style="margin-top:10px"></div>
                     </div>
                 </div>
-                <div id="studentProfiles" class="tab-pane fade">
-                      
-                </div>
     
             </div>
         </div>
-        <%--<div id="mainContent" class="container-fluid">
-                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server">
-                        <ajaxToolkit:TabPanel runat="Server" ID="Panel1" HeaderText="Student Registration Requests">
-                            <ContentTemplate>
-                                <div class="container-fluid" style="height:460px">
-                                    
-                                </div>
-                            </ContentTemplate>
-                        </ajaxToolkit:TabPanel>
-                        <ajaxToolkit:TabPanel runat="Server" ID="Panel2" HeaderText="Current Student Profiles" >
-                        <ContentTemplate>
-                            <div class="container-fluid" style="height:460px">
-                                </div>
-                        </ContentTemplate>
-                        </ajaxToolkit:TabPanel>
-                </ajaxToolkit:TabContainer>
-         
-        </div>--%>
            
         </div>
         <!--PageLoad-->
@@ -446,7 +418,7 @@
     </div>
     </form>
     <script>
-        $(function() {
+        $(function () {
 
             $("#jsGrid").jsGrid({
                 height: "100%",
@@ -459,94 +431,33 @@
                 pageSize: 15,
                 pageButtonCount: 7,
                 deleteConfirm: "Do you really want to delete the client?",
-                controller: db,
+                controller: db2,
                 fields: [
                     { name: "Reg_No", type: "text", width: 80 },
                     { name: "Primary_Email", type: "text", width: 110 },
                     { name: "Secondary_Email", type: "text", width: 100 },
-                    { name: "Faculty", type: "select", items: db.faculties, valueField: "Id", textField: "Name",width: 70 },
-                    { name: "Group", type: "select", items: db.groups, valueField: "Id", textField: "Name", width: 60 },
-                    { name: "Year", type: "select", items: db.years, valueField: "Id", textField: "Name", width: 50 },
+                    { name: "Faculty", type: "select", items: db2.faculties, valueField: "Id", textField: "Name", width: 70 },
+                    { name: "Group", type: "select", items: db2.groups, valueField: "Id", textField: "Name", width: 60 },
+                    { name: "Year", type: "select", items: db2.years, valueField: "Id", textField: "Name", width: 50 },
                     { name: "Mobile", type: "text", width: 80 },
-                    { headerTemplate: function() {
-                        return 'Register';
-                    },
+                    {
+                        headerTemplate: function () {
+                            return 'Deactivate';
+                        },
                         itemTemplate: function (_, item) {
-                        return $("<button>").attr("type", "button").text("Add").addClass('btn-sm btn-success')
-                                    .on("click", function () {
-                                        addSelectedItems(item);
-                                    });
-                            },
+                            return $("<button>").attr("type", "button").text("Deactivate").addClass('btn-sm btn-warning')
+                                        .on("click", function () {
+                                            alert(item);
+                                        });
+                        },
                         align: "center",
-                         width: 50
-                     },
-                    { type: "control",editButton:false}
+                        width: 60
+                    },
+                    { type: "control", editButton: false }
                 ]
             });
 
-            var addSelectedItems = function (item) {
-                console.log(item);
-                $.ajax({
-                    type: "post",
-                    url: "WebService1.asmx/verifyStudent",
-                    data: JSON.stringify({ 'regNo': item.Reg_No}),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (result) {
-                        console.log(result.d);
-                        if (result.d === 'success') {
-                            swal({
-                                title: "Verification Completed!",
-                                text: "Request is Valid! Would you like to add this Student?",
-                                type: "success",
-                                showCancelButton: true,
-                                confirmButtonColor: "#819FF7",
-                                cancelButtonColor:"#FE2E2E",
-                                cancelButtonText: "No, I don't",
-                                confirmButtonText: "Yes, I want",
-                                closeOnConfirm: false,
-                                closeOnCancel: false
-                            },
-                            function (isConfirm) {
-                                if (isConfirm) {
-                                    addStudent(item);
-                                } else {
-                                    swal("Cancelled", "Didn't add the Student", "error");
-                                }
-                            });
-                        }
-                        else {
-                            sweetAlert("Verification Completed!", "Invalid Student", "error");
-                        }
-                    }
-                });
-            };
-
-            var addStudent = function (student) {
-                console.log(student);
-                $.ajax({
-                    type: "post",
-                    url: "WebService1.asmx/addStudentProfile",
-                    data: JSON.stringify({ 'regNo': student.Reg_No, 'primaryEmail': student.Primary_Email, 'secondaryEmail': student.Secondary_Email, 'faculty': student.Faculty, 'group': student.Group, 'year': student.Year, 'mobile': student.Mobile }),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (result) {
-                        console.log(result.d);
-                        if (result.d === 'success') {
-                            swal("Success!", "Added the Student", "success");
-                        }
-                        else {
-                            swal("Failed!", "Failed to add the Student profile", "error");
-                        }
-                    }
-                });
-            }
-        });
-
-        $("#btn").click(function () {
-            $("#new").show();
         });
     </script>
-    
 </body>
 </html>
