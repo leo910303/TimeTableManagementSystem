@@ -644,6 +644,7 @@
     <Content Include="Student_Module\img\logo1.png" />
     <Content Include="Student_Module\img\sliit_LOGO_new.png" />
     <Content Include="Student_Module\js\db.js" />
+    <Content Include="Student_Module\js\db2.js" />
     <Content Include="Student_Module\js\jquery-ui.min.js" />
     <Content Include="Student_Module\js\jquery.js" />
     <Content Include="Student_Module\js\jsgrid.core.js" />
@@ -658,9 +659,12 @@
     <Content Include="Student_Module\js\jsgrid.sort-strategies.js" />
     <Content Include="Student_Module\js\sweetalert.min.js" />
     <Content Include="Student_Module\Main.aspx" />
+    <Content Include="Student_Module\StudentManagement.aspx" />
     <Content Include="Student_Module\WebService1.asmx" />
     <Content Include="Table.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcademicStaffManagement.aspx.cs">
@@ -760,6 +764,13 @@
     </Compile>
     <Compile Include="Student_Module\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Module\StudentManagement.aspx.cs">
+      <DependentUpon>StudentManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student_Module\StudentManagement.aspx.designer.cs">
+      <DependentUpon>StudentManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Student_Module\WebService1.asmx.cs">
       <DependentUpon>WebService1.asmx</DependentUpon>
@@ -880,7 +891,9 @@
       <DependentUpon>AdminModel.edmx</DependentUpon>
       <LastGenOutput>AdminModel.cs</LastGenOutput>
     </Content>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

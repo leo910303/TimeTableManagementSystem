@@ -5,7 +5,7 @@
     setTimeout(function () { $("#new").hide(); }, 3000);
     $.ajax({
         type: "post",
-        url: "WebService1.asmx/getPendingList",
+        url: "WebService1.asmx/getStudentProfiles",
         data: "{}",
         async:false,
         contentType: "application/json; charset=utf-8",
@@ -17,13 +17,13 @@
         timeout: 10000,
         success: function (result) {
             console.log(result.d);
-            // db.clients.push(result.d);
+            // db2.clients.push(result.d);
             window.temp = result.d.slice();
             $("#new").hide();
         }
     });
 
-    var db = {
+    var db2 = {
 
         loadData: function(filter) {
             return $.grep(this.clients, function(client) {
@@ -57,25 +57,25 @@
    
     };
 
-    window.db = db;
-    db.clients = temp;
+    window.db2 = db2;
+    db2.clients = temp;
     
     
 
-    db.faculties = [
-        {Name:"", Id: 0 },
+    db2.faculties = [
+        { Name: "", Id: 0 },
         { Name: "Computing", Id: 1 },
         { Name: "Business", Id: 2 },
         { Name: "Engineering", Id: 3 }
     ];
 
-    db.groups = [
+    db2.groups = [
         { Name: "", Id: 0 },
         { Name: "Week Day", Id: 1 },
         { Name: "Week End", Id: 2 }
     ];
    
-    db.years = [
+    db2.years = [
         { Name: "", Id: 0 },
         { Name: "Year 1", Id: 1 },
         { Name: "Year 2", Id: 2 },
@@ -84,7 +84,7 @@
     ];
     
 
-    db.users = [
+    db2.users = [
         {
             "ID": "x",
             "Account": "A758A693-0302-03D1-AE53-EEFE22855556",
@@ -102,7 +102,7 @@
             "RegisterDate": "2014-08-13T09:17:49-07:00"
         },
         {
-            "Account": "EED7653D-7DD9-A722-64A8-36A55ECDBE77",
+            "Account": "EED7653D-7DD9-A722-64A8-36A55ECdb2E77",
             "Name": "Derek Thornton",
             "RegisterDate": "2012-02-27T01:31:07-08:00"
         },
@@ -117,7 +117,7 @@
             "RegisterDate": "2013-11-10T07:29:41-08:00"
         },
         {
-            "Account": "658DBF5A-176E-569A-9273-74FB5F69FA42",
+            "Account": "658db2F5A-176E-569A-9273-74FB5F69FA42",
             "Name": "Nash Knapp",
             "RegisterDate": "2005-06-24T09:11:19-07:00"
         },
@@ -207,7 +207,7 @@
             "RegisterDate": "2015-06-20T11:53:11-07:00"
         },
         {
-            "Account": "F0D12CC0-31AC-A82E-FD73-EEEFDBD21A36",
+            "Account": "F0D12CC0-31AC-A82E-FD73-EEEFdb2D21A36",
             "Name": "Sylvester Gaines",
             "RegisterDate": "2004-03-12T09:57:13-08:00"
         },
@@ -225,7 +225,7 @@
 
    
 
-    console.log(db.clients);
+    console.log(db2.clients);
 }());
 
 (function () {
