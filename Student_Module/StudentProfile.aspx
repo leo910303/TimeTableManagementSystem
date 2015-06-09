@@ -1,12 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudentManagement.aspx.cs" Inherits="TimeTableManagementSystem.Student_Module.StudentManagement" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudentProfile.aspx.cs" Inherits="TimeTableManagementSystem.Student_Module.StudentProfile" UnobtrusiveValidationMode="None" enableEventValidation="false"%>
 
 <!DOCTYPE html>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Student Management</title>
+    <title>Student Profile</title>
     <!-- Bootstrap 3.3.2 -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
@@ -20,11 +18,7 @@
     <link href="../dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
     <link href="css/Main.css" rel="stylesheet" />
     <link href="css/pageLoad.css" rel="stylesheet" />
-    <!--Js Grid-->
-    <link href="css/demos.css" rel="stylesheet"/>
-    <link href="css/jsgrid.css" rel="stylesheet" type="text/css"/>
-    <link href="css/theme.css" rel="stylesheet" type="text/css"/>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,400" rel="stylesheet" type="text/css"/>
+   
     <link href="css/sweetalert.css" rel="stylesheet" />
      
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -45,23 +39,11 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js" type="text/javascript"></script>
     <script src="js/sweetalert.min.js" type="text/javascript"></script>
-    <script src="js/db2.js" type="text/javascript"></script>
-    <!--Js Grid-->
-    <script src="js/jsgrid.core.js" type="text/javascript"></script>
-    <script src="js/jsgrid.load-indicator.js" type="text/javascript"></script>
-    <script src="js/jsgrid.load-strategies.js" type="text/javascript"></script>
-    <script src="js/jsgrid.sort-strategies.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.text.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.number.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.select.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.checkbox.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.control.js" type="text/javascript"></script>
 </head>
 <body class="skin-blue">
     <form id="form1" runat="server">
     <div>
-           <div class="wrapper">
+        <div class="wrapper">
       
       <header class="main-header">
         <a href="#" class="logo"><b>User Panel</b></a>
@@ -352,6 +334,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="../AcademicStaffManagement.aspx"><i class="fa fa-circle-o"></i> Manage Academic Staff</a></li>
+                <li><a href="StudentManagement.aspx"><i class="fa fa-circle-o"></i> Student Profiles</a></li>
               </ul>
             </li>
 
@@ -386,29 +369,142 @@
       <!-- Right side column. Contains the navbar and content of the page -->
       <div class="content-wrapper" style="background-color:white">
         <!-- Main content goes here-->
-       <div class="container" style="padding-left: 0px;">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#studentProfiles">Current Student Profiles</a></li>
-            </ul>
-
-            <div class="tab-content">
-                <div id="studentProfiles" class="tab-pane fade in active">
-                    <div class="container-fluid" style="height:460px">
-                        <div id="jsGrid" style="margin-top:10px"></div>
-                    </div>
+       <div class="container-fluid" style="padding:10px">
+           <div class="row">
+                <div class="col-sm-2">
+                    <img src="img/student-interns1.jpg" alt="Unable to load image" class="img-thumbnail">
                 </div>
-    
+                <div class="col-sm-6" style="margin-left: 0px; padding-left: 0px; margin-top: 13px;">
+                    <h1 style="font-size: 56px; font-style: normal;">STUDENT CORNER</h1>
+                </div>  
             </div>
-        </div>
+           <div class="row">
+               <div class="panel panel-default">
+                   <div class="panel-body">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#profileNonEdit">My Proflie Details</a></li>
+                         <li><a data-toggle="tab" href="#profileEdit">Proflie Settings</a></li>
+                        <li><a data-toggle="tab" href="#notificationSettings">Notification Settings</a></li>
+                        
+                    </ul>
+                     <div class="tab-content">
+                      <div id="profileNonEdit" class="tab-pane fade in active">
+                        <div class="col-sm-6" style="padding:20px;">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <!--regNo-->
+                                        <asp:Label ID="Label1" runat="server" Text="Registration Number" CssClass="col-sm-offset-1 col-sm-4" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="Label5" runat="server" Text=":-" CssClass="col-sm-1" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="Label2" runat="server" Text="Label"  CssClass="col-sm-3" Font-Bold="true"></asp:Label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <asp:Label ID="Label3" runat="server" Text="Primary Email" CssClass="col-sm-offset-1 col-sm-4" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="Label6" runat="server" Text=":-" CssClass="col-sm-1" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="Label4" runat="server" Text="Label"  CssClass="col-sm-3" Font-Bold="true"></asp:Label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <asp:Label ID="Label7" runat="server" Text="Secondary Email" CssClass="col-sm-offset-1 col-sm-4" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="Label8" runat="server" Text=":-" CssClass="col-sm-1" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="Label9" runat="server" Text="Label"  CssClass="col-sm-3" Font-Bold="true"></asp:Label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <asp:Label ID="Label10" runat="server" Text="Faculty" CssClass="col-sm-offset-1 col-sm-4" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="Label11" runat="server" Text=":-" CssClass="col-sm-1" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="Label12" runat="server" Text="Label"  CssClass="col-sm-3" Font-Bold="true"></asp:Label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <asp:Label ID="Label13" runat="server" Text="Group" CssClass="col-sm-offset-1 col-sm-4" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="Label14" runat="server" Text=":-" CssClass="col-sm-1" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="Label15" runat="server" Text="Label"  CssClass="col-sm-3" Font-Bold="true"></asp:Label>
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <div class="row">
+                                        <asp:Label ID="Label16" runat="server" Text="Current Year" CssClass="col-sm-offset-1 col-sm-4" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="Label17" runat="server" Text=":-" CssClass="col-sm-1" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="Label18" runat="server" Text="Label"  CssClass="col-sm-3" Font-Bold="true"></asp:Label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <asp:Label ID="Label19" runat="server" Text="Mobile Number" CssClass="col-sm-offset-1 col-sm-4" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="Label20" runat="server" Text=":-" CssClass="col-sm-1" Font-Bold="true"></asp:Label>
+                                        <asp:Label ID="Label21" runat="server" Text="Label"  CssClass="col-sm-3" Font-Bold="true"></asp:Label>
+                                    </div>
+                                </div>
+                        </div>
+                       </div>
+                        <div id="profileEdit" class="tab-pane fade">
+                            <div class="col-sm-6" style="padding:20px;">
+                                <div class="form-group">
+                                     <div class="row">
+                                        <!--Secondary Email (Optional)-->
+                                         <asp:Label ID="Label22" runat="server" Text="Secondary Email (Optional)" CssClass="col-sm-offset-1 col-sm-4" Font-Bold="true"></asp:Label>
+                                        <div class="col-sm-6">
+                                            <asp:TextBox ID="sEmail" runat="server" ToolTip="Secondary Email (optional)" CssClass="form-control"></asp:TextBox>
+                                            <asp:RegularExpressionValidator ID="sEmailReg" runat="server" ErrorMessage="* Email format is incorrect" ForeColor="Red" ControlToValidate="sEmail" ValidationGroup="sRegistration" ValidationExpression="^(([^<>()[\]\\.,;:\s@\'']+(\.[^<>()[\]\\.,;:\s@\'']+)*)|(\''.+\''))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$" Display="Dynamic"></asp:RegularExpressionValidator>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                     <div class="row">
+                                        <!--Group-->
+                                         <asp:Label ID="Label23" runat="server" Text="Group" Font-Bold="true" CssClass="col-sm-offset-1 col-sm-4"></asp:Label>
+                                        <div class="col-sm-6">
+                                            <asp:RadioButton ID="wd" runat="server" GroupName="group" CssClass="radio-inline" Text="Week Day" Checked="true"/>
+                                            <asp:RadioButton ID="we" runat="server" GroupName="group" CssClass="radio-inline" Text="Week End"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                     <div class="row">
+                                        <!--Current Year-->
+                                         <asp:Label ID="Label24" runat="server" Text="Select your Current Year" Font-Bold="true" CssClass="col-sm-offset-1 col-sm-4"></asp:Label>
+                                         <div class="col-sm-6">
+                                             <asp:DropDownList ID="year" runat="server" CssClass="dropdown"></asp:DropDownList>
+                                         </div>
+                                        </div>
+                                    </div>
+                                <div class="form-group">
+                                     <div class="row">
+                                        <!--Mobile Number-->
+                                         <asp:Label ID="Label25" runat="server" Text="Mobile Number" Font-Bold="true" CssClass="col-sm-offset-1 col-sm-4"></asp:Label>
+                                        <div class="col-sm-6">
+                                            <asp:TextBox ID="mobile" runat="server" CssClass="form-control" ToolTip="Mobile Number"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="mobileReq" runat="server" ErrorMessage="* Mobile Number required" ForeColor="Red" ControlToValidate="mobile" ValidationGroup="sRegistration" Display="Dynamic"></asp:RequiredFieldValidator>
+                                            <asp:RegularExpressionValidator ID="mobileReg" runat="server" ErrorMessage="* Incorrect Format" ForeColor="Red" ControlToValidate="mobile" ValidationGroup="sRegistration" ValidationExpression="^07(1|2|5|6|7|8)[0-9]{7}$" Display="Dynamic"></asp:RegularExpressionValidator>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="form-group">
+                                         <div class="row">
+                                            <div class="col-sm-2 col-sm-offset-1">
+                                                <!--Submit-->
+                                                <asp:Button ID="Save" runat="server" Text="Save" CssClass="btn btn-success" ValidationGroup="sRegistration" OnClick="Save_Click" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                         <div id="notificationSettings">
+                            <div class="col-sm-6" style="padding:20px;">
+                            </div>
+                         </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
            
-        </div>
-        <!--PageLoad-->
-        <div id="new" class="body">
-            <div class="loader-wrapper">
-            <div class="loader"></div>
-            <div class="loader-section section-left"></div>
-            <div class="loader-section section-right"></div>
-            </div>
+       </div>
+        
         </div>
             
       <footer class="main-footer">
@@ -417,50 +513,5 @@
     </div><!-- ./wrapper -->
     </div>
     </form>
-    <script>
-        $(function () {
-
-            $("#jsGrid").jsGrid({
-                height: "100%",
-                width: "100%",
-                filtering: true,
-                editing: false,
-                sorting: true,
-                paging: true,
-                autoload: true,
-                pageSize: 15,
-                pageButtonCount: 7,
-                deleteConfirm: "Do you really want to delete the client?",
-                controller: db2,
-                fields: [
-                    { name: "Reg_No", type: "text", width: 80 },
-                    { name: "Primary_Email", type: "text", width: 110 },
-                    { name: "Secondary_Email", type: "text", width: 100 },
-                    { name: "Faculty", type: "select", items: db2.faculties, valueField: "Id", textField: "Name", width: 70 },
-                    { name: "Group", type: "select", items: db2.groups, valueField: "Id", textField: "Name", width: 60 },
-                    { name: "Year", type: "select", items: db2.years, valueField: "Id", textField: "Name", width: 50 },
-                    { name: "Mobile", type: "text", width: 80 },
-                    {
-                        headerTemplate: function () {
-                            return 'Deactivate';
-                        },
-                        itemTemplate: function (_, item) {
-                            return $("<button>").attr("type", "button").text("Deactivate").addClass('btn-sm btn-warning')
-                                        .on("click", function () {
-                                            test(item);
-                                        });
-                        },
-                        align: "center",
-                        width: 60
-                    },
-                    { type: "control", editButton: false }
-                ]
-            });
-            var test = function (item) {
-                console.log(item);
-              
-            };
-        });
-    </script>
 </body>
 </html>

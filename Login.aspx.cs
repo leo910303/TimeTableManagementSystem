@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TimeTableManagementSystem.App_Data;
 using TimeTableManagementSystem.Student_Module;
+using System.Net;
+using System.Net.Mail;
 namespace TimeTableManagementSystem_Update
 {
     public partial class Login : System.Web.UI.Page
@@ -62,6 +64,7 @@ namespace TimeTableManagementSystem_Update
             //}
 
             //login.DecryptPassword(Password, "", "");
+
             Response.Redirect("Student_Module/Main.aspx");
         }
 
