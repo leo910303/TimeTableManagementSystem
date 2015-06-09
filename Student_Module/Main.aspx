@@ -27,7 +27,8 @@
     <link href="css/theme.css" rel="stylesheet" type="text/css"/>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,400" rel="stylesheet" type="text/css"/>
     <link href="css/sweetalert.css" rel="stylesheet" />
-     
+    <!--summernote-->
+    <link href="css/summernote.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -58,7 +59,8 @@
     <script src="js/jsgrid.field.select.js" type="text/javascript"></script>
     <script src="js/jsgrid.field.checkbox.js" type="text/javascript"></script>
     <script src="js/jsgrid.field.control.js" type="text/javascript"></script>
-
+    <!--summernote-->
+    <script src="js/summernote.min.js" type="text/javascript"></script>
   
 </head>
 <body class="skin-blue">
@@ -357,6 +359,7 @@
               <ul class="treeview-menu">
                 <li><a href="../AcademicStaffManagement.aspx"><i class="fa fa-circle-o"></i> Manage Academic Staff</a></li>
                 <li><a href="StudentManagement.aspx"><i class="fa fa-circle-o"></i> Student Profiles</a></li>
+                  <li><a href="StudentHome.aspx"><i class="fa fa-circle-o"></i> Student Home</a></li>
               </ul>
             </li>
 
@@ -394,7 +397,7 @@
        <div class="container" style="padding-left: 0px;">
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#studentRegistration">Student Registration Requests</a></li>
-                 <li><a data-toggle="tab" href="#studentProfiles">Current Student Profiles</a></li>
+                 <li><a data-toggle="tab" href="#notices">Notices & Events</a></li>
             </ul>
 
             <div class="tab-content">
@@ -402,9 +405,65 @@
                     <div class="container-fluid" style="height:460px">
                         <div id="jsGrid" style="margin-top:10px"></div>
                     </div>
+                    
                 </div>
-                <div id="studentProfiles" class="tab-pane fade">
-                      
+                <div id="notices" class="tab-pane fade">
+                     <div class="row" style="padding:15px;">
+                            <div class="col-sm-2">
+                                <!-- small box -->
+                                <a href="#">
+                                    <div class="small-box bg-aqua" id="newNotice">
+                                        <div class="inner">
+                                            <h3><sup style="font-size: 20px">New Notice</sup></h3>
+                                            <p>Create a new notice</p>
+                                        </div>
+                                    
+                                    <div class="icon" >
+                                        <i class="ion-android-calendar"></i>
+                                    </div>
+                                    
+                                    </div>
+                                    </a>
+                                </div>
+                        </div>
+                     <div class="panel panel-default" id="notice">
+                    <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                        <select id="year" class="divider">
+                            <option value="0">Select a Year</option>
+                            <option value="1">Year 1</option>
+                            <option value="2">Year 2</option>
+                            <option value="3">Year 3</option>
+                            <option value="4">Year 4</option>
+                        </select>
+                        </div>
+                         <div class="col-sm-3">
+                        <select id="batch" class="divider">
+                            <option value="0">Select a Batch</option>
+                            <option value="1">IT</option>
+                            <option value="2">SE</option>
+                            <option value="3">CSN</option>
+                            <option value="4">Engineering</option>
+                            <option value="4">Business</option>
+                        </select>
+                        </div>
+                         <div class="col-sm-3">
+                        <select id="group" class="divider">
+                            <option value="0">Select a Group</option>
+                            <option value="1">Week day</option>
+                            <option value="2">Week end</option>
+                        </select>
+                        </div>
+                    </div>
+                        <h3 style="text-align:center">Create Your Notice</h3>
+                    <div class="container-fluid" style="max-width:850px; padding-top:20px;">
+                        <textarea class="input-block-level" id="summernote" name="content" rows="20"></textarea>
+                        </br>
+                        <input type="button" id="create" value="Post" class="btn btn-success"/>
+                    </div>
+                    </div>
+                    </div>
                 </div>
     
             </div>
@@ -446,6 +505,12 @@
     </div>
     </form>
     <script>
+        $('#summernote').summernote({
+            height: "400px"
+        });
+
+        $("#notice").hide();
+
         $(function() {
 
             $("#jsGrid").jsGrid({
@@ -546,6 +611,37 @@
         $("#btn").click(function () {
             $("#new").show();
         });
+        $("#create").click(function () {
+            var content = $('#summernote').code();
+            console.log(content);
+            var year = $("#year option:selected").val();
+            var batch = $("#batch option:selected").val();
+            var group = $("#group option:selected").val();
+            if (year === "0" || batch === "0" || group === "0") {
+                sweetAlert("Required Feild is missing", "Please check your settings", "error");
+            }
+            else if (content === "<p><br></p>") {
+                sweetAlert("Notice Body is missing", "Please type your notice", "error");
+            }
+            else {
+                $.ajax({
+                    type: "post",
+                    url: "NoticeService.asmx/addNotice",
+                    data: JSON.stringify({ 'content': content }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        alert('posted');
+
+                    }
+                });
+            }
+        });
+
+        $("#newNotice").click(function () {
+            $("#notice").toggle();
+        });
+        
     </script>
     
 </body>

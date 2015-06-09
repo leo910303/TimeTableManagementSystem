@@ -1,12 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudentManagement.aspx.cs" Inherits="TimeTableManagementSystem.Student_Module.StudentManagement" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StudentHome.aspx.cs" Inherits="TimeTableManagementSystem.Student_Module.StudentHome" %>
 
 <!DOCTYPE html>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
-    <title>Student Management</title>
+     <title>Student Home</title>
     <!-- Bootstrap 3.3.2 -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
@@ -20,11 +21,7 @@
     <link href="../dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
     <link href="css/Main.css" rel="stylesheet" />
     <link href="css/pageLoad.css" rel="stylesheet" />
-    <!--Js Grid-->
-    <link href="css/demos.css" rel="stylesheet"/>
-    <link href="css/jsgrid.css" rel="stylesheet" type="text/css"/>
-    <link href="css/theme.css" rel="stylesheet" type="text/css"/>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,400" rel="stylesheet" type="text/css"/>
+   
     <link href="css/sweetalert.css" rel="stylesheet" />
      
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -45,23 +42,12 @@
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js" type="text/javascript"></script>
     <script src="js/sweetalert.min.js" type="text/javascript"></script>
-    <script src="js/db2.js" type="text/javascript"></script>
-    <!--Js Grid-->
-    <script src="js/jsgrid.core.js" type="text/javascript"></script>
-    <script src="js/jsgrid.load-indicator.js" type="text/javascript"></script>
-    <script src="js/jsgrid.load-strategies.js" type="text/javascript"></script>
-    <script src="js/jsgrid.sort-strategies.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.text.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.number.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.select.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.checkbox.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.control.js" type="text/javascript"></script>
 </head>
+
 <body class="skin-blue">
     <form id="form1" runat="server">
-    <div>
-           <div class="wrapper">
+          <div>
+        <div class="wrapper">
       
       <header class="main-header">
         <a href="#" class="logo"><b>User Panel</b></a>
@@ -352,6 +338,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="../AcademicStaffManagement.aspx"><i class="fa fa-circle-o"></i> Manage Academic Staff</a></li>
+                <li><a href="StudentManagement.aspx"><i class="fa fa-circle-o"></i> Student Profiles</a></li>
               </ul>
             </li>
 
@@ -386,30 +373,206 @@
       <!-- Right side column. Contains the navbar and content of the page -->
       <div class="content-wrapper" style="background-color:white">
         <!-- Main content goes here-->
-       <div class="container" style="padding-left: 0px;">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#studentProfiles">Current Student Profiles</a></li>
-            </ul>
-
-            <div class="tab-content">
-                <div id="studentProfiles" class="tab-pane fade in active">
-                    <div class="container-fluid" style="height:460px">
-                        <div id="jsGrid" style="margin-top:10px"></div>
-                    </div>
+       <div class="container-fluid" style="padding:10px">
+           <div class="row">
+                <div class="col-sm-2">
+                    <img src="img/student-interns1.jpg" alt="Unable to load image" class="img-thumbnail">
                 </div>
-    
+                <div class="col-sm-6" style="margin-left: 0px; padding-left: 0px; margin-top: 13px;">
+                    <h1 style="font-size: 56px; font-style: normal;">STUDENT CORNER</h1>
+                </div>
+                <%--<div class="col-sm-2">
+                    <img src="img/student-interns1.jpg" alt="Unable to load image" class="img-thumbnail">
+                </div>--%>
+                
             </div>
+
+           <ul class="nav nav-tabs">
+               <li class="active"><a data-toggle="tab" href="#content">Notices & Events</a></li>        
+           </ul>
+           <div class="panel panel-default">
+            <div class="panel-body">
+            <div class="tab-content">
+            <div id="content" class="tab-pane fade in active">         
+           <div class="row">
+                   <div class="col-sm-10 col-sm-offset-1">
+                        
+                            <div class="panel-body">
+                              <div class="row" id="notice_body" style="min-height:150px; padding:15px; font:25px bold;">
+                                  
+                              </div>
+                              <div class="row" id="controllers" style="min-height:50px; padding:5px">
+                                  <div class="col-sm-2">
+                                    <input type='button' id='agree' value='Agree' class='btn btn-success'/>
+                                   </div>
+                                  <div class="col-sm-2">
+                                    <input type='button' id='disagree' value='Disagree' class='btn btn-danger'/>
+                                   </div>
+                                  <div class="col-sm-2">
+                                    <input type='button' id='tentative' value='Tentative' class='btn btn-info'/>
+                                   </div>
+                              </div>
+                            </div>
+                        
+                   </div>
+                   
+                      
+              
+           </div>
+           <div class="row">
+               <div class="col-sm-10 col-sm-offset-1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Control Panel</div>
+                            <div class="panel-body">
+                                <div class="row">
+                                <div class="col-sm-3">
+                                <!-- small box -->
+                                    <a href="#">
+                                    <div class="small-box bg-aqua" data-toggle="modal" data-target="#myModal">
+                                        <div class="inner">
+                                            <h3><sup style="font-size: 20px"> My Timetable</sup></h3>
+                                            <p>View your Timetable</p>
+                                        </div>
+                                    <div class="icon">
+                                        <i class="ion-android-calendar"></i>
+                                    </div>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3">
+                                <!-- small box -->
+                                    <a href="TimetableOptions.aspx">
+                                    <div class="small-box bg-green">
+                                        <div class="inner">
+                                            <h3><sup style="font-size: 20px"> TimeTable Options</sup></h3>
+                                            <p>Customize View</p>
+                                        </div>
+                                    <div class="icon">
+                                        <i class="ion-android-bulb"></i>
+                                    </div>
+                                    </div>
+                                    </a>
+                                </div>
+                                     <div class="col-sm-3">
+                                <!-- small box -->
+                                    <a href="StudentProfile.aspx">
+                                    <div class="small-box bg-orange">
+                                        <div class="inner">
+                                            <h3><sup style="font-size: 20px">My Profile</sup></h3>
+                                            <p>View your Profile</p>
+                                        </div>
+                                    <div class="icon">
+                                        <i class="ion-android-person"></i>
+                                    </div>
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3">
+                                <!-- small box -->
+                                    <div class="small-box bg-purple">
+                                        <div class="inner">
+                                            <h3><sup style="font-size: 20px"> Recent Notices</sup></h3>
+                                            <p>View recent notices</p>
+                                        </div>
+                                    <div class="icon">
+                                        <i class="ion-ios-book"></i>
+                                    </div
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+           </div>
         </div>
-           
+          </div>
         </div>
+          </div>
+       </div>
+        
+        </div>
+
+        <!--Modal-->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Timetable</h4>
+      </div>
+      <div class="modal-body">
+       <div class="row" id="slot1">
+           <div class="col-sm-2" id="slot1m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot1t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot1w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot1thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot1f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+       </div>
+        <div class="row" id="slot2">
+           <div class="col-sm-2" id="slot2m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot2t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot2w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot2thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot2f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+       </div>
+        <div class="row" id="slot3">
+           <div class="col-sm-2" id="slot3m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot3t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot3w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot3thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot3f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+       </div>
+        <div class="row" id="slot4">
+           <div class="col-sm-2" id="slot4m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot4t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot4w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot4thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot4f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+       </div>
+        <div class="row" id="slot5">
+           <div class="col-sm-2" id="slot5m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot5t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot5w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot5thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot5f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+       </div>
+        <div class="row" id="slot6">
+           <div class="col-sm-2" id="slot6m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot6t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot6w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot6thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot6f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+       </div>
+        <div class="row" id="slot7">
+           <div class="col-sm-2" id="slot7m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot7t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot7w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot7thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot7f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+       </div>
+        <div class="row" id="slot8">
+           <div class="col-sm-2" id="slot8m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot8t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot8w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot8thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+           <div class="col-sm-2" id="slot8f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
+       </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
         <!--PageLoad-->
-        <div id="new" class="body">
+        <%--<div id="new" class="body">
             <div class="loader-wrapper">
             <div class="loader"></div>
             <div class="loader-section section-left"></div>
             <div class="loader-section section-right"></div>
             </div>
-        </div>
+        </div>--%>
             
       <footer class="main-footer">
         <strong>Copyright &copy; 2014-2015 <a href="#">Sri Lanka Institute of Information Technology</a>.</strong> All rights reserved.
@@ -418,48 +581,35 @@
     </div>
     </form>
     <script>
-        $(function () {
+        $(document).ready(function () {
+            $("#controllers").hide();
 
-            $("#jsGrid").jsGrid({
-                height: "100%",
-                width: "100%",
-                filtering: true,
-                editing: false,
-                sorting: true,
-                paging: true,
-                autoload: true,
-                pageSize: 15,
-                pageButtonCount: 7,
-                deleteConfirm: "Do you really want to delete the client?",
-                controller: db2,
-                fields: [
-                    { name: "Reg_No", type: "text", width: 80 },
-                    { name: "Primary_Email", type: "text", width: 110 },
-                    { name: "Secondary_Email", type: "text", width: 100 },
-                    { name: "Faculty", type: "select", items: db2.faculties, valueField: "Id", textField: "Name", width: 70 },
-                    { name: "Group", type: "select", items: db2.groups, valueField: "Id", textField: "Name", width: 60 },
-                    { name: "Year", type: "select", items: db2.years, valueField: "Id", textField: "Name", width: 50 },
-                    { name: "Mobile", type: "text", width: 80 },
-                    {
-                        headerTemplate: function () {
-                            return 'Deactivate';
-                        },
-                        itemTemplate: function (_, item) {
-                            return $("<button>").attr("type", "button").text("Deactivate").addClass('btn-sm btn-warning')
-                                        .on("click", function () {
-                                            test(item);
-                                        });
-                        },
-                        align: "center",
-                        width: 60
-                    },
-                    { type: "control", editButton: false }
-                ]
+            $.ajax({
+                type: "post",
+                url: "NoticeService.asmx/test",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    if (typeof result.d.Id != undefined) {
+                        $("#notice_body").html(result.d.Content);
+                        $("#controllers").show();
+                    } else {
+                        $("#notice_body").text("No new Notices");
+                    }
+                    
+                }
             });
-            var test = function (item) {
-                console.log(item);
-              
-            };
+
+            $("#agree").click(function () {
+                alert('agree');
+            });
+            $("#disagree").click(function () {
+                alert('disagree');
+            });
+            $("#tentative").click(function () {
+                alert('tentative');
+            });
         });
     </script>
 </body>
