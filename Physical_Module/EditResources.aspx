@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" enableEventValidation="false" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="TimeTableManagementSystem.Physical_Module.Main" UnobtrusiveValidationMode="None"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditResources.aspx.cs" Inherits="TimeTableManagementSystem.Physical_Module.EditResources" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>
+     <title>
         Physical Resource
     </title>
         <!-- Bootstrap 3.3.2 -->
@@ -36,7 +36,6 @@
     <!-- AdminLTE App -->
     <script src="../dist/js/app.min.js" type="text/javascript"></script>
     <!-- AdminLTE for demo purposes -->
-    
     
 </head>
 <body class="skin-blue">
@@ -331,7 +330,6 @@
               <ul class="treeview-menu">
                 <li><a href="../FacultyManagement.aspx"><i class="fa fa-circle-o"></i> Faculty Management</a></li>
                 <li><a href="../FacultyManagement.aspx"><i class="fa fa-circle-o"></i> Branch Management</a></li>
-                <li><a href="ResourcesManagement.aspx"><i class="fa fa-circle-o"></i> Resources Management</a></li>
               </ul>
             </li>
 
@@ -376,75 +374,125 @@
       </aside>
 
       <!-- Right side column. Contains the navbar and content of the page -->
-      <div class="content-wrapper">
+      <div class="content-wrapper" style="padding: 10px; background-color:white;">
          
-           
-<div class="container">
-        <div class="form-group">
-           <div class="row">
-               <asp:Label ID="Label1" runat="server" Text="Select Resource" CssClass="col-sm-offset-1 col-sm-2" Font-Bold="True"></asp:Label>
-                   <div class="col-sm-3">
-                       <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server" ToolTip="Select resource"></asp:DropDownList>
-                   </div>
-           </div>
-       </div>
-       <div class="form-group">
-          <div class="row">
-              <asp:Label ID="Label2" runat="server" Text="Name" CssClass="col-sm-offset-1 col-sm-2" Font-Bold="True"></asp:Label>
-                  <div class="col-sm-3">
-                      <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" ToolTip="Enter name" ValidationGroup="addResources"></asp:TextBox>
-                          <asp:RequiredFieldValidator runat="server" style="color:red" controltovalidate="TextBox1" ValidationGroup="addResources" errormessage="*Please enter the name!" />
-                  </div>
-           </div>
-        </div>
-        <div class="form-group">
-           <div class="row">
-              <asp:Label ID="Label3" runat="server" Text="Location" CssClass="col-sm-offset-1 col-sm-2" Font-Bold="True"></asp:Label>
-                  <div class="col-sm-3">
-                         <asp:DropDownList ID="DropDownList3" runat="server" CssClass="form-control" ToolTip="Select location" AppendDataBoundItems="True"></asp:DropDownList>                       
-                         <asp:RequiredFieldValidator runat="server" style="color:red" controltovalidate="DropDownList3" InitialValue="Select Resource" ValidationGroup="addResources" errormessage="*Please enter the name!" />
-                    </div>
-              </div>
-        </div>
-        <div class="form-group">
-                 <div class="row">
-                     <asp:Label ID="Label5" runat="server" Text="Select Floor" CssClass="col-sm-offset-1 col-sm-2" Font-Bold="True"></asp:Label>
-                     <div class="col-sm-3">
-                         <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control" ToolTip="Select floor"></asp:DropDownList>
-                     </div>
-                 </div>
-        </div>
-        <div class="form-group">
-             <div class="row">
-                 <asp:Label ID="Label4" runat="server" Text="Capacity" CssClass="col-sm-offset-1 col-sm-2" Font-Bold="True"></asp:Label>
-                      <div class="col-sm-3">      
-                           <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" ToolTip="Enter Capacity" ValidationGroup="addResources"></asp:TextBox>
-                           <asp:RequiredFieldValidator runat="server" style="color:red" controltovalidate="TextBox2" ValidationGroup="addResources" Display="Dynamic" Errormessage="*Capacity is required!" />                                            
-                           <asp:RequiredFieldValidator runat="server" style="color:red" controltovalidate="TextBox2" ValidationGroup="addResources" ValidationExpression="[0-9]{2}$" Display="Dynamic" Errormessage="*Please enter correct Capacity!" /> 
-                      </div>
-              </div>
-       </div>
-       <div class="form-group">
-              <div class="row">
-                   <div class="col-sm-offset-1 col-sm-2" >
-                      <asp:Button ID="Button3" runat="server" Text="Add resource" ValidationGroup="addResources" CssClass="btn btn-success" OnClick="Button3_Click"/>
-                   </div>
-                   <div class="col-sm-2" style="left:-70px">
-                      <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="btn btn-danger"/>
-                   </div>
-              </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <img class="img-thumbnail" src="images/campus.jpg">
+                
             </div>
-      
-  
-    
-  
-</div>
+            <div class="col-sm-4">
+                <h1 style="text-align: center; margin-top: 40px; margin-left: 0px; padding-left: 0px;">Physical Resources Management</h1>
+            </div>
+            
 
-
-
-         
+        </div>
+    <div class="container-fluid" style="height:460px; padding-left: 0px;">
+      <div class="row">
+       <div class="col-sm-6">
+         <div class="panel panel-primary" style="margin-top:20px">
+             <div class="panel-heading" style="font-size:25px;font:bold"><%=resource.SelectedValue %>&nbsp&nbsp<% =name.Text %>&nbsp<% =prop%></div>
+          <div class="panel-body" style="padding-left: 90px;">
         
-        
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <asp:DropDownList ID="resource" CssClass="form-control" runat="server"></asp:DropDownList>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <asp:TextBox ID="name" CssClass="form-control" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <asp:DropDownList ID="location" CssClass="form-control" runat="server"></asp:DropDownList>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <asp:DropDownList ID="floor" CssClass="form-control" runat="server"></asp:DropDownList>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <asp:TextBox ID="capacity" CssClass="form-control" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+            </div>
+              <div class="row">
+                  <div class="col-sm-2">
+            <div class="form-group">
+                
+                    
+                        <asp:Button ID="Button1" runat="server" Text="Save" CssClass="btn btn-info" />
+                    </div>
+                
+            </div>
+                  <div class="col-sm-2">
+            <div class="form-group">
+                
+                    
+                        <asp:Button ID="Button2" runat="server" Text="Back" CssClass="btn btn-warning"/>
+                    </div>
+                
+            </div>
+                  </div>
+           
+                    </div>
+                </div>
+        </div>
+          <div class="col-sm-6">
+              <div class="panel panel-default"style="margin-top: 21px;">
+                     <div class="panel-heading">Timetable Control Options</div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="small-box bg-aqua">
+                                        <div class="inner">
+                                          <h3><sup style="font-size: 20px"> View Timetable</sup></h3>
+                                          <p>Generate Timetable according </p>
+                                        </div>
+                                        <div class="icon">
+                                          <i class="ion-android-calendar"></i>
+                                        </div>
+                                        
+                                      </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="small-box bg-orange-active">
+                                        <div class="inner">
+                                          <h3><sup style="font-size: 20px">Timetable Options</sup></h3>
+                                          <p>Customized View</p>
+                                        </div>
+                                        <div class="icon">
+                                          <i class="ion-android-settings"></i>
+                                        </div>
+                                        
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    Panel content
+                  </div>
+                  
+                </div>
+
+              </div>
+        </div>
+        </div>   
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
@@ -454,7 +502,6 @@
       </footer>
     </div><!-- ./wrapper -->
     </div>
-        
-    </form>    
+    </form>
 </body>
 </html>
