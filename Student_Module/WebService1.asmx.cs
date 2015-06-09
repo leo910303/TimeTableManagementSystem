@@ -7,6 +7,8 @@ using System.Text;
 using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.Services;
+using System.Net.Mail;
+using System.Net;
 
 namespace TimeTableManagementSystem.Student_Module
 {
@@ -22,6 +24,11 @@ namespace TimeTableManagementSystem.Student_Module
     {
         public static List<Student> studentList = new List<Student>();
         public static List<Student> studentProfilesList = new List<Student>();
+
+        static WebService1()
+        {
+            studentProfilesList.Add(new Student("IT12094714","IT12094714@my.sliit.lk","wadsachi@gmail.com",1,1,2,"0758074724"));
+        }
 
         [WebMethod]
         public List<Student> getPendingList()
@@ -64,7 +71,22 @@ namespace TimeTableManagementSystem.Student_Module
         public static void addRequest(String regNo, String primaryEmail, String secondaryEmail, int faculty, int group, int year, String mobile)
         {
             studentList.Add(new Student(regNo, primaryEmail, secondaryEmail, faculty, group, year, mobile));
+            
         }
+        
+        [WebMethod]
+        public static Student getCurrentStudent(){
+            return studentProfilesList.Last();
+        }
+
+        [WebMethod]
+        public static void updateCurrentStudent(String regNo,String secondaryEmail,int group, int year, String mobile)
+        {
+            Student updateStudent=studentProfilesList.Find(x => x.Reg_No == regNo);
+            studentProfilesList.RemoveAll(x => x.Reg_No == regNo);
+            studentProfilesList.Add(new Student(regNo, updateStudent.Primary_Email, secondaryEmail, updateStudent.Faculty, group, year, mobile));
+        }
+        
     }
     public class Student
     {
