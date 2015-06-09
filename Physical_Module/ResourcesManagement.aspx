@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" enableEventValidation="false" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="TimeTableManagementSystem.Physical_Module.Main" UnobtrusiveValidationMode="None"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ResourcesManagement.aspx.cs" Inherits="TimeTableManagementSystem.Physical_Module.ResourcesManagement" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>
-        Physical Resource
+   <title>
+        Manage Physical Resources
     </title>
         <!-- Bootstrap 3.3.2 -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -19,6 +19,10 @@
          folder instead of downloading all of them to reduce the load. -->
     <link href="../dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
     <link href="css/Main.css" rel="stylesheet"/>
+    <link href="../Student_Module/css/demos.css" rel="stylesheet"/>
+    <link href="../Student_Module/css/jsgrid.css" rel="stylesheet"/>
+    <link href="../Student_Module/css/theme.css" rel="stylesheet"/>
+   
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,12 +40,23 @@
     <!-- AdminLTE App -->
     <script src="../dist/js/app.min.js" type="text/javascript"></script>
     <!-- AdminLTE for demo purposes -->
-    
+    <script src="../dist/js/demo.js" type="text/javascript"></script>
+    <script src="js/db.js" type="text/javascript"></script>
+    <script src="../Student_Module/js/jsgrid.core.js" type="text/javascript"></script>
+    <script src="../Student_Module/js/jsgrid.load-indicator.js" type="text/javascript"></script>
+    <script src="../Student_Module/js/jsgrid.load-strategies.js" type="text/javascript"></script>
+    <script src="../Student_Module/js/jsgrid.sort-strategies.js" type="text/javascript"></script>
+    <script src="../Student_Module/js/jsgrid.field.js" type="text/javascript"></script>
+    <script src="../Student_Module/js/jsgrid.field.text.js" type="text/javascript"></script>
+    <script src="../Student_Module/js/jsgrid.field.number.js" type="text/javascript"></script>
+    <script src="../Student_Module/js/jsgrid.field.select.js" type="text/javascript"></script>
+    <script src="../Student_Module/js/jsgrid.field.checkbox.js" type="text/javascript"></script>
+    <script src="../Student_Module/js/jsgrid.field.control.js" type="text/javascript"></script>
     
 </head>
 <body class="skin-blue">
     <form id="form1" runat="server">
-    <div>
+      <div>
         <div class="wrapper">
       
       <header class="main-header">
@@ -331,7 +346,6 @@
               <ul class="treeview-menu">
                 <li><a href="../FacultyManagement.aspx"><i class="fa fa-circle-o"></i> Faculty Management</a></li>
                 <li><a href="../FacultyManagement.aspx"><i class="fa fa-circle-o"></i> Branch Management</a></li>
-                <li><a href="ResourcesManagement.aspx"><i class="fa fa-circle-o"></i> Resources Management</a></li>
               </ul>
             </li>
 
@@ -379,72 +393,11 @@
       <div class="content-wrapper">
          
            
-<div class="container">
-        <div class="form-group">
-           <div class="row">
-               <asp:Label ID="Label1" runat="server" Text="Select Resource" CssClass="col-sm-offset-1 col-sm-2" Font-Bold="True"></asp:Label>
-                   <div class="col-sm-3">
-                       <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server" ToolTip="Select resource"></asp:DropDownList>
-                   </div>
-           </div>
-       </div>
-       <div class="form-group">
-          <div class="row">
-              <asp:Label ID="Label2" runat="server" Text="Name" CssClass="col-sm-offset-1 col-sm-2" Font-Bold="True"></asp:Label>
-                  <div class="col-sm-3">
-                      <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" ToolTip="Enter name" ValidationGroup="addResources"></asp:TextBox>
-                          <asp:RequiredFieldValidator runat="server" style="color:red" controltovalidate="TextBox1" ValidationGroup="addResources" errormessage="*Please enter the name!" />
-                  </div>
-           </div>
-        </div>
-        <div class="form-group">
-           <div class="row">
-              <asp:Label ID="Label3" runat="server" Text="Location" CssClass="col-sm-offset-1 col-sm-2" Font-Bold="True"></asp:Label>
-                  <div class="col-sm-3">
-                         <asp:DropDownList ID="DropDownList3" runat="server" CssClass="form-control" ToolTip="Select location" AppendDataBoundItems="True"></asp:DropDownList>                       
-                         <asp:RequiredFieldValidator runat="server" style="color:red" controltovalidate="DropDownList3" InitialValue="Select Resource" ValidationGroup="addResources" errormessage="*Please enter the name!" />
-                    </div>
-              </div>
-        </div>
-        <div class="form-group">
-                 <div class="row">
-                     <asp:Label ID="Label5" runat="server" Text="Select Floor" CssClass="col-sm-offset-1 col-sm-2" Font-Bold="True"></asp:Label>
-                     <div class="col-sm-3">
-                         <asp:DropDownList ID="DropDownList2" runat="server" CssClass="form-control" ToolTip="Select floor"></asp:DropDownList>
-                     </div>
-                 </div>
-        </div>
-        <div class="form-group">
-             <div class="row">
-                 <asp:Label ID="Label4" runat="server" Text="Capacity" CssClass="col-sm-offset-1 col-sm-2" Font-Bold="True"></asp:Label>
-                      <div class="col-sm-3">      
-                           <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" ToolTip="Enter Capacity" ValidationGroup="addResources"></asp:TextBox>
-                           <asp:RequiredFieldValidator runat="server" style="color:red" controltovalidate="TextBox2" ValidationGroup="addResources" Display="Dynamic" Errormessage="*Capacity is required!" />                                            
-                           <asp:RequiredFieldValidator runat="server" style="color:red" controltovalidate="TextBox2" ValidationGroup="addResources" ValidationExpression="[0-9]{2}$" Display="Dynamic" Errormessage="*Please enter correct Capacity!" /> 
-                      </div>
-              </div>
-       </div>
-       <div class="form-group">
-              <div class="row">
-                   <div class="col-sm-offset-1 col-sm-2" >
-                      <asp:Button ID="Button3" runat="server" Text="Add resource" ValidationGroup="addResources" CssClass="btn btn-success" OnClick="Button3_Click"/>
-                   </div>
-                   <div class="col-sm-2" style="left:-70px">
-                      <asp:Button ID="Button2" runat="server" Text="Cancel" CssClass="btn btn-danger"/>
-                   </div>
-              </div>
+        <div class="container-fluid" style="height:460px">
+            <div id="jsGrid" style="margin-top:10px">
+
             </div>
-      
-  
-    
-  
-</div>
-
-
-
-         
-        
-        
+        </div>   
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
@@ -454,7 +407,56 @@
       </footer>
     </div><!-- ./wrapper -->
     </div>
-        
-    </form>    
+    </form>
+    <script>
+        $(function() {
+
+            $("#jsGrid").jsGrid({
+                height: "100%",
+                width: "100%",
+                filtering: true,
+                editing: false,
+                sorting: true,
+                paging: true,
+                autoload: true,
+                pageSize: 15,
+                pageButtonCount: 5,
+                deleteConfirm: "Do you really want to delete the client?",
+                controller: db,
+                fields: [ 
+                    { name: "Resource", type: "select", items: db.category, valueField: "Id", textField: "Name" },
+                    { name: "Name", type: "text", width: 50 },
+                    { name: "Location", type: "select", items: db.location, valueField: "Id", textField: "Name" },
+                    { name: "Floor", type: "select", items: db.floor, valueField: "Id", textField: "Name" },
+                    { name: "Capacity", type: "text", width: 50 },
+                    {
+                        headerTemplate: function () {
+                            return 'View Details';
+
+                        },
+                        itemTemplate: function (_, item) {
+                            return $("<button>").attr("type", "button").text("Show More").addClass('btn btn-success')
+                            .on("click", function () {
+                                showMore(item);
+                            });
+
+                        },
+                        align: "center",
+                        width:50
+
+                    },
+                    { type: "control" , editButton:false }
+                ]
+            });
+
+            var showMore = function (item) {
+                alert("This is test");
+                console.log(item);
+                window.location.href = "http://localhost:1427/Physical_Module/EditResources.aspx?Res=" + item.Resource+"&name="+item.Name+
+                    "&location="+item.Location+"&floor="+item.Floor+"&capacity="+item.Capacity;
+            }
+
+        });
+    </script>
 </body>
 </html>
