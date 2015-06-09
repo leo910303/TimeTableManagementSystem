@@ -133,7 +133,6 @@
     <Content Include="pages\404PageNotFound.aspx" />
     <Content Include="Physical_Module\css\Main.css" />
     <Content Include="Physical_Module\EditResources.aspx" />
-    <Content Include="Physical_Module\form.aspx" />
     <Content Include="Physical_Module\images\campus.jpg" />
     <Content Include="Physical_Module\images\index.jpg" />
     <Content Include="Physical_Module\images\index.png" />
@@ -731,13 +730,6 @@
     </Compile>
     <Compile Include="Physical_Module\EditResources.aspx.designer.cs">
       <DependentUpon>EditResources.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Physical_Module\form.aspx.cs">
-      <DependentUpon>form.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Physical_Module\form.aspx.designer.cs">
-      <DependentUpon>form.aspx</DependentUpon>
     </Compile>
     <Compile Include="Physical_Module\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
