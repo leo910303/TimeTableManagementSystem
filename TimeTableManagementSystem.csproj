@@ -134,12 +134,17 @@
     <Content Include="Physical_Module\css\Main.css" />
     <Content Include="Physical_Module\EditResources.aspx" />
     <Content Include="Physical_Module\images\campus.jpg" />
+    <Content Include="Physical_Module\images\form_img.jpg" />
     <Content Include="Physical_Module\images\index.jpg" />
     <Content Include="Physical_Module\images\index.png" />
+    <Content Include="Physical_Module\images\reshedule.jpg" />
     <Content Include="Physical_Module\js\db.js" />
     <Content Include="Physical_Module\Main.aspx" />
     <Content Include="Physical_Module\PhysicalResourceService.asmx" />
+    <Content Include="Physical_Module\RequestService.asmx" />
+    <Content Include="Physical_Module\RescheduleForm.aspx" />
     <Content Include="Physical_Module\ResourcesManagement.aspx" />
+    <Content Include="Physical_Module\ViewRescheduleForm.aspx" />
     <Content Include="plugins\bootstrap-slider\bootstrap-slider.js" />
     <Content Include="plugins\bootstrap-slider\slider.css" />
     <Content Include="plugins\bootstrap-wysihtml5\bootstrap3-wysihtml5.all.min.js" />
@@ -665,6 +670,7 @@
     <Content Include="Student_Module\StudentHome.aspx" />
     <Content Include="Student_Module\StudentManagement.aspx" />
     <Content Include="Student_Module\StudentProfile.aspx" />
+    <Content Include="Student_Module\TimeTable.aspx" />
     <Content Include="Student_Module\TimetableOptions.aspx" />
     <Content Include="Student_Module\WebService1.asmx" />
     <Content Include="Table.aspx" />
@@ -749,12 +755,30 @@
       <DependentUpon>PhysicalResourceService.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Physical_Module\RequestService.asmx.cs">
+      <DependentUpon>RequestService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Physical_Module\RescheduleForm.aspx.cs">
+      <DependentUpon>RescheduleForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Physical_Module\RescheduleForm.aspx.designer.cs">
+      <DependentUpon>RescheduleForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Physical_Module\ResourcesManagement.aspx.cs">
       <DependentUpon>ResourcesManagement.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Physical_Module\ResourcesManagement.aspx.designer.cs">
       <DependentUpon>ResourcesManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Physical_Module\ViewRescheduleForm.aspx.cs">
+      <DependentUpon>ViewRescheduleForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Physical_Module\ViewRescheduleForm.aspx.designer.cs">
+      <DependentUpon>ViewRescheduleForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student_Module\Main.aspx.cs">
@@ -788,6 +812,13 @@
     </Compile>
     <Compile Include="Student_Module\StudentProfile.aspx.designer.cs">
       <DependentUpon>StudentProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Module\TimeTable.aspx.cs">
+      <DependentUpon>TimeTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student_Module\TimeTable.aspx.designer.cs">
+      <DependentUpon>TimeTable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Student_Module\TimetableOptions.aspx.cs">
       <DependentUpon>TimetableOptions.aspx</DependentUpon>

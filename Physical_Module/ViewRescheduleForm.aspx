@@ -1,14 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Main.aspx.cs" Inherits="TimeTableManagementSystem.Student_Module.Main" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewRescheduleForm.aspx.cs" Inherits="TimeTableManagementSystem.Physical_Module.ViewRescheduleForm" %>
 
 <!DOCTYPE html>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-    
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Student Management</title>
-    <!-- Bootstrap 3.3.2 -->
+    <title>
+        Physical Resource
+    </title>
+        <!-- Bootstrap 3.3.2 -->
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -19,16 +18,8 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
     <link href="../dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/Main.css" rel="stylesheet" />
-    <link href="css/pageLoad.css" rel="stylesheet" />
-    <!--Js Grid-->
-    <link href="css/demos.css" rel="stylesheet"/>
-    <link href="css/jsgrid.css" rel="stylesheet" type="text/css"/>
-    <link href="css/theme.css" rel="stylesheet" type="text/css"/>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,400" rel="stylesheet" type="text/css"/>
-    <link href="css/sweetalert.css" rel="stylesheet" />
-    <!--summernote-->
-    <link href="css/summernote.css" rel="stylesheet" />
+    <link href="css/Main.css" rel="stylesheet"/>
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -45,29 +36,11 @@
     <!-- AdminLTE App -->
     <script src="../dist/js/app.min.js" type="text/javascript"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="../dist/js/demo.js" type="text/javascript"></script>
-    <script src="js/sweetalert.min.js" type="text/javascript"></script>
-    <script src="js/db.js" type="text/javascript"></script>
-    <!--Js Grid-->
-    <script src="js/jsgrid.core.js" type="text/javascript"></script>
-    <script src="js/jsgrid.load-indicator.js" type="text/javascript"></script>
-    <script src="js/jsgrid.load-strategies.js" type="text/javascript"></script>
-    <script src="js/jsgrid.sort-strategies.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.text.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.number.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.select.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.checkbox.js" type="text/javascript"></script>
-    <script src="js/jsgrid.field.control.js" type="text/javascript"></script>
-    <!--summernote-->
-    <script src="js/summernote.min.js" type="text/javascript"></script>
-  
 </head>
 <body class="skin-blue">
-    
     <form id="form1" runat="server">
-       <div>
-        <div class="wrapper">
+    <div>
+             <div class="wrapper">
       
       <header class="main-header">
         <a href="#" class="logo"><b>User Panel</b></a>
@@ -393,301 +366,72 @@
 
       <!-- Right side column. Contains the navbar and content of the page -->
       <div class="content-wrapper" style="background-color:white">
-        <!-- Main content goes here-->
-       <div class="container" style="padding-left: 0px;">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#studentRegistration">Student Registration Requests</a></li>
-                 <li><a data-toggle="tab" href="#notices">Notices & Events</a></li>
-            </ul>
+          <div class="row">
+              <div class="col-sm-3">
+                <img class="img-thumbnail" src="images/reshedule.jpg">
+                
+            </div>
+            <div class="col-sm-4">
+                <h1 style="text-align: center; margin-top: 40px; margin-left: 0px; padding-left: 0px;">Reschedule Request Form</h1>
+            </div>
 
-            <div class="tab-content">
-                <div id="studentRegistration" class="tab-pane fade in active">
-                    <div class="container-fluid" style="height:460px">
-                        <div id="jsGrid" style="margin-top:10px"></div>
-                    </div>
-                    
-                </div>
-                <div id="notices" class="tab-pane fade">
-                     <div class="row" style="padding:15px;">
-                            <div class="col-sm-2">
-                                <!-- small box -->
-                                <a href="#">
-                                    <div class="small-box bg-aqua" id="newNotice">
+          </div>
+       <div class="row" style="margin-top:40px">
+                <asp:Label ID="Label1" runat="server" Font-Bold="true" CssClass="col-sm-offset-2 col-sm-2" Text="Category"></asp:Label>
+               <asp:Label ID="category" runat="server" CssClass="col-sm-1" Text="Label"></asp:Label>
+       </div>
+    <div class="row" style="margin-top:30px">
+               <asp:Label ID="Label3" runat="server" Font-Bold="true" CssClass="col-sm-offset-2 col-sm-2" Text="Batch"></asp:Label>
+                <asp:Label ID="batch" runat="server" CssClass="col-sm-1" Text="Label"></asp:Label>
+    </div>
+    <div class="row" style="margin-top:20px">
+               <asp:Label ID="Label5" runat="server" Font-Bold="true" CssClass="col-sm-offset-2 col-sm-2" Text="Year"></asp:Label>
+               <asp:Label ID="year" runat="server" CssClass="col-sm-1" Text="Label"></asp:Label>
+    </div>
+    <div class="row" style="margin-top:20px">
+               <asp:Label ID="Label7" runat="server" Font-Bold="true" CssClass="col-sm-offset-2 col-sm-2" Text="Subject"></asp:Label>
+               <asp:Label ID="subject" runat="server" CssClass="col-sm-1" Text="Label"></asp:Label>
+    </div>
+    <div class="row" style="margin-top:16px">
+               <asp:Label ID="Label9" runat="server" Font-Bold="true" CssClass="col-sm-offset-2 col-sm-2" Text="Reschedule Date"></asp:Label>
+               <asp:Label ID="rescheduleDate" runat="server" CssClass="col-sm-1" Text="Label"></asp:Label>
+    </div>
+    <div class="row" style="margin-top:16px">
+               <asp:Label ID="Label11" runat="server" Font-Bold="true" CssClass="col-sm-offset-2 col-sm-2" Text="Time"></asp:Label>
+               <asp:Label ID="from" runat="server" CssClass="col-sm-1" Text="From :" Font-Bold="true"></asp:Label>
+                <asp:Label ID="to" runat="server" CssClass="col-sm-1" Text="To :" Font-Bold="true"></asp:Label>     
+    </div>
+    <div class="row" style="margin-top:16px">
+               <asp:Label ID="Label14" runat="server" Font-Bold="true" CssClass="col-sm-offset-2 col-sm-2" Text="Comments"></asp:Label>
+               <asp:Label ID="comments" runat="server" CssClass="col-sm-1" Text="Label"></asp:Label>
+    </div>
+          <div class="row" style="margin-top:16px">
+            <div class="col-sm-2">
+                 <div class="col-sm-6">
+                                    <div class="small-box bg-orange-active">
                                         <div class="inner">
-                                            <h3><sup style="font-size: 20px">New Notice</sup></h3>
-                                            <p>Create a new notice</p>
+                                          <h3><sup style="font-size: 20px">Evaluate request</sup></h3>
+                                          <p>Customized View</p>
                                         </div>
-                                    
-                                    <div class="icon" >
-                                        <i class="ion-android-calendar"></i>
-                                    </div>
-                                    
-                                    </div>
-                                    </a>
+                                        <div class="icon">
+                                          <i class="ion-android-bulb"></i>
+                                        </div>
+                                        
+                                      </div>
                                 </div>
-                        </div>
-                     <div class="panel panel-default" id="notice">
-                    <div class="panel-body">
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <select id="year" class="divider">
-                            <option value="0">Select a Year</option>
-                            <option value="1">Year 1</option>
-                            <option value="2">Year 2</option>
-                            <option value="3">Year 3</option>
-                            <option value="4">Year 4</option>
-                        </select>
-                        </div>
-                         <div class="col-sm-3">
-                        <select id="batch" class="divider">
-                            <option value="0">Select a Batch</option>
-                            <option value="1">IT</option>
-                            <option value="2">SE</option>
-                            <option value="3">CSN</option>
-                            <option value="4">Engineering</option>
-                            <option value="4">Business</option>
-                        </select>
-                        </div>
-                         <div class="col-sm-3">
-                        <select id="group" class="divider">
-                            <option value="0">Select a Group</option>
-                            <option value="1">Week day</option>
-                            <option value="2">Week end</option>
-                        </select>
-                        </div>
-                    </div>
-                        <h3 style="text-align:center">Create Your Notice</h3>
-                    <div class="container-fluid" style="max-width:850px; padding-top:20px;">
-                        <textarea class="input-block-level" id="summernote" name="content" rows="20"></textarea>
-                        </br>
-                        <input type="button" id="create" value="Post" class="btn btn-success"/>
-                    </div>
-                    </div>
-                    </div>
-                    <div class="row" style="margin:15px;">
-                        <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="row">
-                                <div id="existingNotices_content">
-
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div id="existingNotices_votes">
-
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-    
             </div>
-        </div>
-        <%--<div id="mainContent" class="container-fluid">
-                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                    <ajaxToolkit:TabContainer ID="TabContainer1" runat="server">
-                        <ajaxToolkit:TabPanel runat="Server" ID="Panel1" HeaderText="Student Registration Requests">
-                            <ContentTemplate>
-                                <div class="container-fluid" style="height:460px">
-                                    
-                                </div>
-                            </ContentTemplate>
-                        </ajaxToolkit:TabPanel>
-                        <ajaxToolkit:TabPanel runat="Server" ID="Panel2" HeaderText="Current Student Profiles" >
-                        <ContentTemplate>
-                            <div class="container-fluid" style="height:460px">
-                                </div>
-                        </ContentTemplate>
-                        </ajaxToolkit:TabPanel>
-                </ajaxToolkit:TabContainer>
-         
-        </div>--%>
-           
-        </div>
-        <!--PageLoad-->
-        <div id="new" class="body">
-            <div class="loader-wrapper">
-            <div class="loader"></div>
-            <div class="loader-section section-left"></div>
-            <div class="loader-section section-right"></div>
-            </div>
-        </div>
-            
+           </div>
+      </div>
+       
+       </div>     
       <footer class="main-footer">
         <strong>Copyright &copy; 2014-2015 <a href="#">Sri Lanka Institute of Information Technology</a>.</strong> All rights reserved.
       </footer>
     </div><!-- ./wrapper -->
-    </div>
-    </form>
-    <script>
-        $('#summernote').summernote({
-            height: "400px"
-        });
-        var content;
-        $("#notice").hide();
-
-        $(function() {
-
-            $("#jsGrid").jsGrid({
-                height: "100%",
-                width: "100%",
-                filtering: true,
-                editing: false,
-                sorting: true,
-                paging: true,
-                autoload: true,
-                pageSize: 15,
-                pageButtonCount: 7,
-                deleteConfirm: "Do you really want to delete the client?",
-                controller: db,
-                fields: [
-                    { name: "Reg_No", type: "text", width: 80 },
-                    { name: "Primary_Email", type: "text", width: 110 },
-                    { name: "Secondary_Email", type: "text", width: 100 },
-                    { name: "Faculty", type: "select", items: db.faculties, valueField: "Id", textField: "Name",width: 70 },
-                    { name: "Group", type: "select", items: db.groups, valueField: "Id", textField: "Name", width: 60 },
-                    { name: "Year", type: "select", items: db.years, valueField: "Id", textField: "Name", width: 50 },
-                    { name: "Mobile", type: "text", width: 80 },
-                    { headerTemplate: function() {
-                        return 'Register';
-                    },
-                        itemTemplate: function (_, item) {
-                        return $("<button>").attr("type", "button").text("Add").addClass('btn-sm btn-success')
-                                    .on("click", function () {
-                                        addSelectedItems(item);
-                                    });
-                            },
-                        align: "center",
-                         width: 50
-                     },
-                    { type: "control",editButton:false}
-                ]
-            });
-
-            var addSelectedItems = function (item) {
-                console.log(item);
-                $.ajax({
-                    type: "post",
-                    url: "WebService1.asmx/verifyStudent",
-                    data: JSON.stringify({ 'regNo': item.Reg_No}),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (result) {
-                        console.log(result.d);
-                        if (result.d === 'success') {
-                            swal({
-                                title: "Verification Completed!",
-                                text: "Request is Valid! Would you like to add this Student?",
-                                type: "success",
-                                showCancelButton: true,
-                                confirmButtonColor: "#819FF7",
-                                cancelButtonColor:"#FE2E2E",
-                                cancelButtonText: "No, I don't",
-                                confirmButtonText: "Yes, I want",
-                                closeOnConfirm: false,
-                                closeOnCancel: false
-                            },
-                            function (isConfirm) {
-                                if (isConfirm) {
-                                    addStudent(item);
-                                } else {
-                                    swal("Cancelled", "Didn't add the Student", "error");
-                                }
-                            });
-                        }
-                        else {
-                            sweetAlert("Verification Completed!", "Invalid Student", "error");
-                        }
-                    }
-                });
-            };
-
-            var addStudent = function (student) {
-                console.log(student);
-                $.ajax({
-                    type: "post",
-                    url: "WebService1.asmx/addStudentProfile",
-                    data: JSON.stringify({ 'regNo': student.Reg_No, 'primaryEmail': student.Primary_Email, 'secondaryEmail': student.Secondary_Email, 'faculty': student.Faculty, 'group': student.Group, 'year': student.Year, 'mobile': student.Mobile }),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (result) {
-                        console.log(result.d);
-                        if (result.d === 'success') {
-                            swal("Success!", "Added the Student", "success");
-                        }
-                        else {
-                            swal("Failed!", "Failed to add the Student profile", "error");
-                        }
-                    }
-                });
-            }
-        });
-
-        $("#btn").click(function () {
-            $("#new").show();
-        });
-
-        $("#create").click(function () {
-            content = $('#summernote').code();
-            console.log(content);
-            var year = $("#year option:selected").val();
-            var batch = $("#batch option:selected").val();
-            var group = $("#group option:selected").val();
-            if (year === "0" || batch === "0" || group === "0") {
-                sweetAlert("Required Feild is missing", "Please check your settings", "error");
-            }
-            else if (content === "<p><br></p>") {
-                sweetAlert("Notice Body is missing", "Please type your notice", "error");
-            }
-            else {
-                $.ajax({
-                    type: "post",
-                    url: "NoticeService.asmx/addNotice",
-                    data: JSON.stringify({ 'content': content }),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (result) {
-                        alert('posted');
-                        $("#notice").hide();
-                        location.reload();
-                    }
-                });
-            }
-        });
-
-        (function () {
-            $.ajax({
-                type: "post",
-                url: "NoticeService.asmx/test",
-                data: '{}',
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (result) {
-                    $("#existingNotices_content").html("<div class='col-sm-offset-1 col-sm-10'>" + result.d.Content + "</div>");
-                }
-            });
-
-            $.ajax({
-                type: "post",
-                url: "NoticeService.asmx/getVotes",
-                data: '{}',
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (result) {
-                    $("#existingNotices_votes").html("<div class='col-sm-4'><h3>Agreed Count&nbsp" + result.d.AgreeCount +
-                        "</h3></div><div class='col-sm-4'><h3>Disagreed Count&nbsp" + result.d.DisagreeCount +
-                        "</h3></div><div class='col-sm-4'><h3>Tentative Count&nbsp" + result.d.TentativeCount +
-                        "</h3></div>");
-                }
-            });
-        }());
-
-        $("#newNotice").click(function () {
-            $("#notice").toggle();
-        });
         
-    </script>
+
     
+    
+    </form>
 </body>
 </html>

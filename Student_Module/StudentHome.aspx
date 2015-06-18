@@ -427,8 +427,8 @@
                                 <div class="row">
                                 <div class="col-sm-3">
                                 <!-- small box -->
-                                    <a href="#">
-                                    <div class="small-box bg-aqua" data-toggle="modal" data-target="#myModal">
+                                    <a href="TimeTable.aspx">
+                                    <div class="small-box bg-aqua">
                                         <div class="inner">
                                             <h3><sup style="font-size: 20px"> My Timetable</sup></h3>
                                             <p>View your Timetable</p>
@@ -492,87 +492,6 @@
         
         </div>
 
-        <!--Modal-->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Timetable</h4>
-      </div>
-      <div class="modal-body">
-       <div class="row" id="slot1">
-           <div class="col-sm-2" id="slot1m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot1t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot1w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot1thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot1f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-       </div>
-        <div class="row" id="slot2">
-           <div class="col-sm-2" id="slot2m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot2t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot2w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot2thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot2f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-       </div>
-        <div class="row" id="slot3">
-           <div class="col-sm-2" id="slot3m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot3t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot3w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot3thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot3f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-       </div>
-        <div class="row" id="slot4">
-           <div class="col-sm-2" id="slot4m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot4t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot4w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot4thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot4f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-       </div>
-        <div class="row" id="slot5">
-           <div class="col-sm-2" id="slot5m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot5t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot5w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot5thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot5f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-       </div>
-        <div class="row" id="slot6">
-           <div class="col-sm-2" id="slot6m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot6t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot6w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot6thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot6f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-       </div>
-        <div class="row" id="slot7">
-           <div class="col-sm-2" id="slot7m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot7t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot7w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot7thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot7f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-       </div>
-        <div class="row" id="slot8">
-           <div class="col-sm-2" id="slot8m" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot8t" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot8w" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot8thu" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-           <div class="col-sm-2" id="slot8f" style="border:1px solid black; min-height:30px; min-width:30px;"></div>
-       </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        
-      </div>
-    </div>
-  </div>
-</div>
-        <!--PageLoad-->
-        <%--<div id="new" class="body">
-            <div class="loader-wrapper">
-            <div class="loader"></div>
-            <div class="loader-section section-left"></div>
-            <div class="loader-section section-right"></div>
-            </div>
-        </div>--%>
             
       <footer class="main-footer">
         <strong>Copyright &copy; 2014-2015 <a href="#">Sri Lanka Institute of Information Technology</a>.</strong> All rights reserved.
@@ -583,7 +502,9 @@
     <script>
         $(document).ready(function () {
             $("#controllers").hide();
-
+            var requestId;
+            var vote;
+            console.log(window.sessionStorage.getItem("submit_status"));
             $.ajax({
                 type: "post",
                 url: "NoticeService.asmx/test",
@@ -593,7 +514,10 @@
                 success: function (result) {
                     if (typeof result.d.Id != undefined) {
                         $("#notice_body").html(result.d.Content);
-                        $("#controllers").show();
+                        if (window.sessionStorage.getItem("submit_status") === null) {
+                            $("#controllers").show();
+                            requestId = result.d.Id;
+                        } 
                     } else {
                         $("#notice_body").text("No new Notices");
                     }
@@ -602,13 +526,54 @@
             });
 
             $("#agree").click(function () {
-                alert('agree');
+                vote = "agree";
+                
+                $.ajax({
+                    type: "post",
+                    url: "NoticeService.asmx/addVotes",
+                    data: JSON.stringify({ 'id': requestId,'vote':vote }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                       window.sessionStorage.setItem("submit_status", "true");
+                       swal('Sunbmitted!', 'Thank you for your Feedback', 'success');
+                       location.reload();
+                    }
+                });
+                
+                
             });
             $("#disagree").click(function () {
-                alert('disagree');
+                vote = "disagree";
+                
+                $.ajax({
+                    type: "post",
+                    url: "NoticeService.asmx/addVotes",
+                    data: JSON.stringify({ 'id': requestId, 'vote': vote }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        window.sessionStorage.setItem("submit_status", "true");
+                        swal('Sunbmitted!', 'Thank you for your Feedback', 'success');
+                        location.reload();
+                    }
+                });
             });
             $("#tentative").click(function () {
-                alert('tentative');
+                vote = "tentative";
+                
+                $.ajax({
+                    type: "post",
+                    url: "NoticeService.asmx/addVotes",
+                    data: JSON.stringify({ 'id': requestId, 'vote': vote }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        window.sessionStorage.setItem("submit_status", "true");
+                        swal('Sunbmitted!', 'Thank you for your Feedback', 'success');
+                        location.reload();
+                    }
+                });
             });
         });
     </script>

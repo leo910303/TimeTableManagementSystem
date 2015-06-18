@@ -420,7 +420,7 @@
                       <div class="col-sm-3">      
                            <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control" ToolTip="Enter Capacity" ValidationGroup="addResources"></asp:TextBox>
                            <asp:RequiredFieldValidator runat="server" style="color:red" controltovalidate="TextBox2" ValidationGroup="addResources" Display="Dynamic" Errormessage="*Capacity is required!" />                                            
-                           <asp:RequiredFieldValidator runat="server" style="color:red" controltovalidate="TextBox2" ValidationGroup="addResources" ValidationExpression="[0-9]{2}$" Display="Dynamic" Errormessage="*Please enter correct Capacity!" /> 
+                           
                       </div>
               </div>
        </div>
